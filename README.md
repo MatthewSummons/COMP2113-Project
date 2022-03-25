@@ -1,7 +1,7 @@
 # COMP2113-Project
 A text-based game created in C/C++ created by Shaheer Ziya &amp; Botagoz Issayeva 
 
-// Genereal Concept of the game
+// General Concept of the game
 
 
 Duration of the game: 20-30 min
@@ -22,8 +22,7 @@ Pick a number in (0-100) when opening chest
 
 // Random Battle Encounters --> Undertale? 1/2 unique enenimes in the area
 
-Castle I -> Forest -> City
-
+Castle I -> Forest -> Pond
 
 CASTLE I
 (You've been here before)
