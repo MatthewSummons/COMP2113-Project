@@ -39,3 +39,28 @@ play Autumn wind written by me when you accomplish
 Roll Credits at the end, everything by us
 
 Play songs in battle (Maybe from Undertale)
+
+
+Meeting 2:
+
+- Start and End are determined 
+The path through them is random
+maybe 1/2 random encounters 
+-> A, B, C, D (2 or 3 or maybe 4 or 5 locations)
+
+A: 
+2--8
+Once encountered monster, can't fight again
+
+12 "Screens" dialouge (choices)
+screen 1, & 6 
+
+
+-> difeerent monsters in each location
+- items are random as well
+
+Idea 1
+-- In game reason for revival is b/c it's dream/memory
+
+
+
