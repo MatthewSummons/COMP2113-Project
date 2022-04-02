@@ -11,14 +11,14 @@ Setting Period : Early 1900s (Near the start of world war 1)
 
 
 Treasure Chests
-Pick a number in (0-100) when opening chest
+Pick a number in range (0-100) when opening chest
 
 [0,30] : low level item
 [30, 50] : med item
 [50, 95] : high-level item
 [95,100] : legendry item
 
-// Lore for why we respoawn when we die --> Sekiro: Shadows Die Twice (DARK)
+// Lore for why we respawn when we die --> Sekiro: Shadows Die Twice (DARK)
 
 // Random Battle Encounters --> Undertale? 1/2 unique enenimes in the area
 
@@ -33,9 +33,9 @@ CASTLE I
 
 
 
-Easter_Eggs : If we enter a passcode on the load screen it shows something!
+Easter_Eggs : If we enter a passcode on the load screen, it shows something!
 play Autumn wind written by me when you accomplish 
 
-Roll Credits at the end, everything by me us too
+Roll Credits at the end, everything by us
 
 Play songs in battle (Maybe from Undertale)
