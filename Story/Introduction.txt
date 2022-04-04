@@ -1,0 +1,57 @@
+-- Intro Scene
+
+// Adjust the tone of the plot (Increase/Reduce Drama)
+// Add in more deatils
+
+Darkness and a chilling Cold.
+
+As you unseal your near-frozen eyelids, a perplexing scene beholds you.
+You're on your back, gazing up to a gray sky, barely visible.
+There's whiteness everywhere and it's cold. You're amidst what seems to be the start of
+a blizzard. 
+
+As the energy in your body returns, you feel the cold from the melting ice under you seep into your legs
+through your jeans. You can barely feel your feet and hands.
+
+It's so cold.
+So Cold.
+
+"What the ..."
+
+"I need to search for warmth. I'm not just going to die like this."
+
+"What's happening?!"
+
+"Doesn't matter! I need to look for something to regain my heat", you mutter as you slowly scamper up.
+
+!!**!!
+
+Make choice
+- search pockets
+- look around
+- die of cold
+
+!!**!!
+
+  - Look Around
+As you stand up, you notice that you're in a clearning. The trees, hardly noticeable under the heavy snow,
+surround you. You're stood amidst a forest. With nowhere to-- ... 
+
+As turn around, you notice a trail of thick, black smoke in the sky coming from inside the forest
+
+What if other choices (?)
+
+!!**!!
+
+Make a choice
+- Follow the trail into the forest
+- Scamper off in the opposite direction (?)
+
+!!**!!
+
+  - Follow Trail
+
+
+What if not follow (?)
+-- Add plot
+-- GAME OVER
