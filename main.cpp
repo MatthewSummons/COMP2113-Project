@@ -1,30 +1,31 @@
 #include "Helper Functions/Help.h"
+#include <unistd.h>
+#include <chrono>
+#include <thread>
+#include <string>
 
 int main()
 {
-  setSeed();
-  std::cout << RNG(1, 100) << std::endl;
+  // Title_Screen();
 
-  int arr[4] = {0};
-  for (int i{0}; i < 10000; i++)
+  std::string text = "Hello World!";
+  
+  for (int i = 0; i < text.length(); i++)
   {
-    std::string item = openTreaure("L", "M", "H", "X");
-    if (item == "L")
-      arr[0]++;
-    else if (item == "M")
-      arr[1]++;
-    else if (item == "H")
-      arr[2]++;
+    if (i == text.length()-1)
+    {
+      std::cout << text[i] << std::flush;
+      // Adds the delay
+      std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+      std::cout << std::endl;
+      // Clears the screen
+      system("clear");
+    }
     else
-      arr[3]++;
-    
+    {
+      std::cout << text[i] << std::flush;
+      std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    }
   }
-
-
-  for (int i{0}; i < 4; i++)
-  {
-    std::cout << arr[i] << std::endl;
-  }
-
   return 0;
 }
