@@ -1,4 +1,4 @@
-﻿Game title: Crystal flower
+Game title: Crystal flower
 
 
 Characters
@@ -98,7 +98,7 @@ With the guidance of the spirit, the girl goes to Koshchei the immortal.
 The girl came to Koshchei's castle. He saw her and said:
 
 
-* You deserve a punishment for barging into my territory without my permission. But I am merciful and fair, therefore I give you a choice so that you choose your own fate. Now, who do you want to turn into a statue, zombie or animal? 
+* You deserve a punishment for barging into my territory without my permission. But I am merciful and fair, therefore I give you a choice so that you choose your fate. Now, who do you want to turn into a statue, zombie or animal? 
 
 
 Choice:
@@ -222,7 +222,7 @@ Then the spirit appears and smiles slyly.
 * Well done girl, you were able to get what I could not get at the time. However, you don't know everything. 4 crystals are not enough to revive your father. I didn't tell you that I also have a crystal, which is the last component. Without this stone, you won't be able to revive your father. Only the power of five stones will give you what you want. But I was not going to give you my crystal, and I will not give it. And without my crystal, 4 crystals are worthless. Therefore, you have to give them to me.
 * You deceived me, evil spirit. And I will not give you my crystals, which I have obtained.
 * Then I will kill you and take them from you.
-* Don't kill me and don't take my crystals from me. You are kind and helped me all the way through and saved me from death.
+* Don't kill me and don't take my crystals from me. You are kind, helped me all the way through, and saved me from death.
 * I had my agenda all along, and I helped you for a reason. I will become the most powerful being on earth and rule the world forever.
 * Why do you need this power if it does not give you human and earthly happiness? Is this what happiness is? Rule the world and enslave the people. You don't even have friends.
 Spirit thought:
@@ -230,10 +230,14 @@ Spirit thought:
 * Let's be friends then.
 * Are you serious?
 * Yes.
-* Then I'll really help you revive your father. But you don't need the stones anymore, and I'm leaving them for myself. I decided to abandon my goals to enslave the world and will help people.
+* Then I'll help you revive your father. But you don't need the stones anymore, and I'm leaving them for myself. I decided to abandon my goals to enslave the world and will help people.
 
 
 Hera returns home with a magical flower. Putting the flower in her father's hand, she sees her father open his eyes.
 
 
 End.
+
+
+P.S.: We may integrate mini-games with the clues hidden inside of them between each act.
+      Easter eggs can be included as proposed earlier.
