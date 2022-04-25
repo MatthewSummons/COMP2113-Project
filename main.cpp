@@ -6,14 +6,19 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 // #include "Helper Functions/Help.h"
 #include "Title_Screen.h"
 
 int main()
 {
   int game_mode = -1;
+  bool saved = false;
   
-  Title_Screen();
+  Title_Screen(game_mode, saved);
+
+  cout << game_mode << endl;
 
   // std::string text = "Hello World!";
   

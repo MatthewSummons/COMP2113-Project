@@ -14,11 +14,13 @@ using namespace std;
 
 #include "Title_Screen.h"
 
-void Title_Screen(int &game_mode) {
-  bool saved = isSaved();
+void Title_Screen(int &game_mode, bool &saved) {
+  // Update the save status of the game
+  saved = isSaved();
   
   print_title_screen(saved);
   
+  // Update the game mode after user selects it
   game_mode = ask_game_mode(saved);
 }
 
@@ -146,6 +148,31 @@ int ask_game_mode(bool isSaved) {
       delayed_print("Come back next time!");
       system("clear");
       exit(1);
+    }
+  }
+
+  // If user wants to play a new game when a save already exists, confirm their choice
+  if (isSaved && (user_option == 1)) {
+    delayed_print("Are you sure you want to play a new game when a save already exists?");
+    delayed_print("State the game mode you want to play");
+    delayed_print("If you choose (1) New Game, your save file will be overwritten");
+    
+    cin >> user_option;
+
+    // If user decides to overwire save file
+    if (user_option == 1) {
+      ofstream save_file;
+      save_file.open(".Save/save.sv");
+
+      if (save_file.fail())
+      {
+        delayed_print("Error opening save file");
+        exit(1);
+      }
+
+      string updated_save_status = "No Save";
+      save_file << updated_save_status;
+      save_file.close();
     }
   }
 
