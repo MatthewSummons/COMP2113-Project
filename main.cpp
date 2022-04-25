@@ -11,7 +11,9 @@
 
 int main()
 {
-  print_title_screen();
+  int game_mode = -1;
+  
+  Title_Screen();
 
   // std::string text = "Hello World!";
   
