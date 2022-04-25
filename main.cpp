@@ -1,43 +1,30 @@
-// #include <unistd.h>
-// #include <chrono>
-// #include <thread>
-// #include <string>
-
 #include <iostream>
-#include <string>
 
 using namespace std;
 
-// #include "Helper Functions/Help.h"
-#include "Title_Screen.h"
+#include "Title_Screen.hpp"
+#include "Save_Load.hpp"
 
-int main()
-{
-  int game_mode = -1;
-  bool saved = false;
+#define inventory_length 8
+
+int main() {
   
+  int game_mode = 0;    // 1 :=  New Game, 2 := Continue
+  bool saved = false;   // Store if a save file exists
+  
+  // Update game mode by determining if a save exists or not
   Title_Screen(game_mode, saved);
 
-  cout << game_mode << endl;
+  // Update the stage and inventory by loading save and creating a new one in none exists
+  string stage = "";
+  string *inventory = new string[inventory_length];
+  Start_Save_Load(game_mode, stage, inventory);
 
-  // std::string text = "Hello World!";
+  cout << "The stage is " << stage << endl;
   
-  // for (int i = 0; i < text.length(); i++)
-  // {
-  //   if (i == text.length()-1)
-  //   {
-  //     std::cout << text[i] << std::flush;
-  //     // Adds the delay
-  //     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-  //     std::cout << std::endl;
-  //     // Clears the screen
-  //     system("clear");
-  //   }
-  //   else
-  //   {
-  //     std::cout << text[i] << std::flush;
-  //     std::this_thread::sleep_for(std::chrono::milliseconds(100));
-  //   }
-  // }
-  return 0;
+  cout << "'ere comes the inventory: " << endl;
+  for (int i = 0; i < 8; i++) {
+    cout << inventory[i] << endl;
+  }
+
 }

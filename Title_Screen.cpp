@@ -12,7 +12,7 @@ using namespace std;
 #define CENTRE 78
 #define TERMINAL_HEIGHT 15
 
-#include "Title_Screen.h"
+#include "Title_Screen.hpp"
 
 void Title_Screen(int &game_mode, bool &saved) {
   // Update the save status of the game
@@ -99,7 +99,7 @@ void print_title_screen(bool save_status) {
 // Returns true if "Save Exists", false if "No Save" & otherwise rewrites the save file
 bool isSaved() {
   ifstream save_file;
-  save_file.open(".Save/save.sv");
+  save_file.open(".Save/save.save");
 
   if (save_file.fail()) {
     delayed_print("Error loading from file");
@@ -121,7 +121,7 @@ bool isSaved() {
     
     // Open new file to rewrite it
     ofstream save_file_E;
-    save_file_E.open(".Save/save.sv");
+    save_file_E.open(".Save/save.save");
     save_file_E << No_Save << endl;
     save_file_E.close();
     exit(1);
@@ -166,7 +166,7 @@ int ask_game_mode(bool isSaved) {
     // If user decides to overwire save file
     if (user_option == 1) {
       ofstream save_file;
-      save_file.open(".Save/save.sv");
+      save_file.open(".Save/save.save");
 
       if (save_file.fail())
       {

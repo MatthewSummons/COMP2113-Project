@@ -1,5 +1,5 @@
-#ifndef TITLE_SCREEN_H
-#define TITLE_SCREEN_H
+#ifndef TITLE_SCREEN_HPP
+#define TITLE_SCREEN_HPP
 
 // Handles the title screen ouput and input, decides the game mode as well
 void Title_Screen(int &game_mode, bool &saved);
