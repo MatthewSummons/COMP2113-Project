@@ -11,5 +11,6 @@ bool isSaved();
 
 // Update the game mode dependent on what the user inputs
 int ask_game_mode(bool save_status);
+void quit_game();
 
 #endif

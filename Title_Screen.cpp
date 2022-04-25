@@ -137,19 +137,12 @@ int ask_game_mode(bool isSaved) {
   
   // Quit will be 3
   if (isSaved) {
-    if(user_option == 3) {
-      delayed_print("Come back next time!");
-      system("clear");
-      exit(1);
-    }
+    if(user_option == 3)
+      quit_game();
   }
   // Quit will be 2
-  else {
-    if (user_option == 2) {
-      delayed_print("Come back next time!");
-      system("clear");
-      exit(1);
-    }
+  else if (user_option == 2) {
+    quit_game();
   }
 
   // Easter Egg
@@ -165,6 +158,10 @@ int ask_game_mode(bool isSaved) {
     delayed_print("If you choose (1) New Game, your save file will be overwritten");
     
     cin >> user_option;
+
+    if (user_option == 3) {
+      quit_game();
+    }
 
     // If user decides to overwire save file
     if (user_option == 1) {
@@ -185,3 +182,9 @@ int ask_game_mode(bool isSaved) {
 
   return user_option;
 } 
+
+void quit_game() {
+  delayed_print("Come back next time!");
+  system("clear");
+  exit(1);
+}
