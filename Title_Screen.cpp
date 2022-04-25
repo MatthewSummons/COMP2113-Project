@@ -54,15 +54,16 @@ void print_title_screen(bool save_status) {
     cout << endl;
   }
   
-  // The Game Title
-  string Title = R"(
-   _____                           _______  _  _    _       
-  / ____|                         |__   __|(_)| |  | |      
- | |  __   __ _  _ __ ___    ___     | |    _ | |_ | |  ___ 
- | | |_ | / _` || '_ ` _ \  / _ \    | |   | || __|| | / _ \
- | |__| || (_| || | | | | ||  __/    | |   | || |_ | ||  __/
-  \_____| \__,_||_| |_| |_| \___|    |_|   |_| \__||_| \___|                                                         
-  )";
+  // The Game Title with "45" spaces
+  string Title = R"(                                                         
+                                                                                                      
+                                              .--.            .       .   .---..                      
+                                             :               _|_      |   |    |                      
+                                             |    .--..  ..--.|  .-.  |   |--- | .-..  .    ._.-. .--.
+                                             :    |   |  |`--.| (   ) |   |    |(   )\  \  / (.-' |   
+                                              `--''   `--|`--'`-'`-'`-`-  '    `-`-'  `' `'   `--''   
+                                                         ;                                            
+                                                      `-'                                             )";
 
   cout << Title << endl;
 
@@ -149,6 +150,12 @@ int ask_game_mode(bool isSaved) {
       system("clear");
       exit(1);
     }
+  }
+
+  // Easter Egg
+  if (user_option == 69) {
+    delayed_print("nice.");
+    exit(1);
   }
 
   // If user wants to play a new game when a save already exists, confirm their choice
