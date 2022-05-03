@@ -4,6 +4,8 @@ using namespace std;
 
 #include "Title_Screen.hpp"
 #include "Save_Load.hpp"
+#include "Story.hpp"
+#include "End_Screen.hpp"
 
 #define inventory_length 8
 
@@ -18,13 +20,11 @@ int main() {
   // Update the stage and inventory by loading save and creating a new one in none exists
   string stage = "";
   string *inventory = new string[inventory_length];
+  
   Start_Save_Load(game_mode, stage, inventory);
 
-  cout << "The stage is " << stage << endl;
+  Play_Stage(stage);
   
-  cout << "'ere comes the inventory: " << endl;
-  for (int i = 0; i < 8; i++) {
-    cout << inventory[i] << endl;
-  }
+  
 
 }
