@@ -21,6 +21,10 @@ std::string stages_alias[] = {
   "Final Battle"
 };
 
+// Constructor & tie in with end screen
+// ! for the last save
+// ! write func to update inventory (Add/ Remove)
+// ! Pass inventory to story functions
 struct Choice {
   string line;
   string end_screen;
@@ -45,18 +49,19 @@ void print(string str, int delay, bool isEndLine) {
 // Select stage based on load from save file; If new game, play from Introduction
 void Play_Stage(string &stage, string *inventory) {
   if (stage == "Introduction")
-    Introduction();
+    Introduction(inventory);
   else if (stage == "Monster 1")
-    Monster_1();
+    Monster_1(inventory);
   else if (stage == "Monster 2")
-    Monster_2();
+    Monster_2(inventory);
   else if (stage == "Monster 3")
-    Monster_3();
+    Monster_3(inventory);
   else if (stage == "Monster 4")
-    Monster_4();
+    Monster_4(inventory);
   else if (stage == "Final Battle") {
-    Final_Battle();
+    Final_Battle(inventory);
     print("Thanks for playing!");
+    return;
   }
   
   else {
@@ -108,19 +113,22 @@ void Update_Stage(string &stage) {
   stage = next_stage;
 }
 
-void Introduction() {
+void Introduction(string *inventory) {
   system("clear");
+
+  // Protag gains a sword
+
 
   print("Introduction");
 
   // R"()" for raw strings.
    
-   minigame_1();
+  //  minigame_1();
   // print()
 }
 
 
-void Monster_1 () {
+void Monster_1 (string *inventory) {
   system("clear");
   
   print("MONSTER 1");
@@ -128,25 +136,25 @@ void Monster_1 () {
   print(" Issayeva", 10);
 }
 
-void Monster_2 () {
+void Monster_2 (string *inventory) {
   system("clear");
 
   cout << "MONSTER 2" << endl;
 }
 
-void Monster_3 () {
+void Monster_3 (string *inventory) {
   system("clear");
 
   cout << "MONSTER 3" << endl;
 }
 
-void Monster_4 () {
+void Monster_4 (string *inventory) {
   system("clear");
 
   cout << "MONSTER 4" << endl;
 }
 
-void Final_Battle() {
+void Final_Battle(string *inventory) {
   system("clear");
 
   cout << "FINALE" << endl;

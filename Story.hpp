@@ -13,13 +13,13 @@ void Ask_Save(const string stage, string *inventory);
 void Update_Stage(std::string &stage);
 
 // Print the story for the respective stage
-void Introduction();
+void Introduction(string *inventory);
 
-void Monster_1();
-void Monster_2();
-void Monster_3();
-void Monster_4();
+void Monster_1(string *inventory);
+void Monster_2(string *inventory);
+void Monster_3(string *inventory);
+void Monster_4(string *inventory);
 
-void Final_Battle();
+void Final_Battle(string *inventory);
 
 #endif

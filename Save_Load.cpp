@@ -30,7 +30,7 @@ void Start_Save_Load(const int game_mode, std::string &stage, std::string* inven
     Crystal_Flower.stage = "Introduction";
 
     for (int i = 0; i < inventory_length; i++) {
-      Crystal_Flower.inventory[i] = " \n";
+      Crystal_Flower.inventory[i] = "Empty";
     }
     update_save(Crystal_Flower);
   }

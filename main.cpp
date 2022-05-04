@@ -21,9 +21,13 @@ int main() {
   string stage = "";
   string *inventory = new string[inventory_length];
   
+  // Initialize Inventory to be empty
+  for (int i = 0; i < inventory_length; i++) {
+    inventory[i] = "Empty";
+  }
+  
   // Load data from save if continuing previous game, otherwise create a new save
   Start_Save_Load(game_mode, stage, inventory);
-
 
   // Play corresponding stage
   while (stage != "Final Battle") {
@@ -31,7 +35,7 @@ int main() {
     Update_Stage(stage);
     cout << "The stage is " << stage << endl;
   }
-
+  
   // Play the Final Stage
   Play_Stage(stage, inventory);
   
