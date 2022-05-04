@@ -193,6 +193,7 @@ First head:
 * Okay, let's not argue. Let the girl choose how she wants to die.
 
 Choice:
+- Get burned:
 
 Hera gets burned by the dragon in an instant.
 
@@ -200,14 +201,14 @@ Hera gets burned by the dragon in an instant.
 
 
 
-Get trampled:
+- Get trampled over:
 
 Without any time wasted, Hera gets trampled over by the dragon.
 
 (BAD ENDING)
 
 
-Get eaten:
+- Get eaten:
 
 * Fine, I’ll choose to be eaten. But how are you going to eat me at the same time since there are three of you? 
   Which one of you has sharper teeth, so my death will be quick and painless? Can each of you show me your teeth? 
@@ -225,6 +226,7 @@ A spirit appears and gives Hera a magic sword. She threatens the dragon:
 (THIRD CRYSTAL PIECE OBTAINED)
 
 
+
 Act 4: The Snow Queen
 
 
@@ -232,6 +234,7 @@ Seeing a girl in her kingdom, she said:
 
 
 * Who are you, where are you from, and what do you need in my kingdom?
+
 The girl froze and spoke to her: 
 
 
@@ -242,41 +245,44 @@ The girl froze and spoke to her:
 
 
 Choice:
-Die slowly:
+- Die slowly:
+
 Hera became an ice statue.
 
+(BAD ENDING)
 
-Become her daughter:
 
+
+- Become her daughter:
 
 And then a spirit arose and said:
 
-
 * With this torch, you can turn the entire kingdom of the Snow Queen into water.
 
-
 Hera put the torch into inventory. She was going to turn the entire kingdom, along with the queen, into water. 
-The queen spoke:
 
+The queen spoke:
 
 * Girl, you are kind. You won't kill me, I didn't do you any harm. 
   Perhaps you will leave me and my kingdom alone if I give you my magic crystal. 
   You are kind girl, and not evil.
 
-
 (FOURTH CRYSTAL PIECE OBTAINED)
 
 
 
-
+Arriving back to home, Hera tries to put the crystal pieces together. However, to no vail. 
 Then the spirit appears and smiles slyly. 
-
 
 * Well done girl, you were able to get what I could not get at the time. However, you don't know everything. 
   4 crystals are not enough to revive your father. I didn't tell you that I also have a crystal, which is the last component. 
   Without this stone, you won't be able to revive your father. Only the power of five stones will give you what you want.
   But I was not going to give you my crystal, and I will not give it. And without my crystal, 4 crystals are worthless. 
   Therefore, you have to give them to me.
+
+Choice:
+- Try to change the mind of the evil spirit:
+
 * You deceived me, evil spirit. And I will not give you my crystals, which I have obtained.
 * Then I will kill you and take them from you.
 * Don't kill me and don't take my crystals from me. You are kind, helped me all the way through, and saved me from death.
@@ -298,6 +304,13 @@ Spirit thought:
 Hera returns home with a magical flower. Putting the flower in her father's hand, she sees her father open his eyes.
 
 (GOOD ENDING)
+
+- Give up the crystals to the evil spirit:
+
+The spirit kills the girl once obtaining what he wanted. With the power of the crystal flower, he became the most powerful being on earth.
+He did many bad deeds and brought the people misery and destruction.
+
+(BAD ENDING)
 
 
 
