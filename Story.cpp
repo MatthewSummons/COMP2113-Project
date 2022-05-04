@@ -111,33 +111,44 @@ void Update_Stage(string &stage) {
 void Introduction() {
   system("clear");
 
-  print("Yo!");
-  // print("It was a tragic sight.", 100);
-  // print("An innocent 7 year old was mourning the passing of her father.");
-  // print("The girl, Hera, had lost her mother at birth & now the only thing that motivated her to live too had been snatched from her hands.");
+  print("Introduction");
 
+  // R"()" for raw strings.
+   
+   minigame_1();
   // print()
 }
 
 
 void Monster_1 () {
   system("clear");
+  
   print("MONSTER 1");
+  print("Bota", 100, false);
+  print(" Issayeva", 10);
 }
 
 void Monster_2 () {
+  system("clear");
+
   cout << "MONSTER 2" << endl;
 }
 
 void Monster_3 () {
+  system("clear");
+
   cout << "MONSTER 3" << endl;
 }
 
 void Monster_4 () {
+  system("clear");
+
   cout << "MONSTER 4" << endl;
 }
 
 void Final_Battle() {
+  system("clear");
+
   cout << "FINALE" << endl;
 }
 
