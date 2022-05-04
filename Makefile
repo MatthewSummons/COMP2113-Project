@@ -1,4 +1,4 @@
-FLAGS = -pedantic-errors -std=c++11
+FLAGS = -pedantic-errors -std=c++11 -g
 
 Title_Screen.o: Title_Screen.cpp Title_Screen.hpp
 			g++ $(FLAGS) -c $< -o $@

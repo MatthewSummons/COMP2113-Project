@@ -15,7 +15,7 @@ struct Game_State {
 std::string stages [] = {
   "Introduction", 
   "Monster 1",
-  "Monster 2"
+  "Monster 2",
   "Monster 3",
   "Monster 4",
   "Final Battle "
@@ -47,6 +47,24 @@ void Start_Save_Load(const int game_mode, std::string &stage, std::string* inven
   for (int i = 0; i < inventory_length; i++) {
     inventory[i] = Crystal_Flower.inventory[i];
   }
+
+  delete [] Crystal_Flower.inventory;
+}
+
+// Encapsulate game status and update save file
+void Save(const std::string stage, std::string *inventory) {
+  Game_State game_status;
+  
+  // 5 - 1 Stages excluding the final stage
+  std::string next_stage = "Corrupted";
+  for (int i = 0; i < 4; i++) {
+    if (stage == stages[i])
+      next_stage = stages[i+1];
+  }
+  
+  game_status.stage = next_stage;
+  game_status.inventory = inventory;
+  update_save(game_status);
 }
 
 // Given a game state, write to the save file

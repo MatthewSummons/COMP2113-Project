@@ -4,6 +4,7 @@
 #include <string>
 
 void Start_Save_Load(const int game_mode, std::string &stage, std::string* inventory);
+void Save(const std::string stage, std::string *inventory);
 
 void update_save(struct Game_State game_status);
 void load_save(struct Game_State &game_status);

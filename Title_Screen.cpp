@@ -54,17 +54,16 @@ void print_title_screen(bool save_status) {
     cout << endl;
   }
   
-  // The Game Title with "45" spaces
+  // The Game Title with "50" spaces
   string Title = R"(                                                         
                                                                                                       
-                                              .--.            .       .   .---..                      
-                                             :               _|_      |   |    |                      
-                                             |    .--..  ..--.|  .-.  |   |--- | .-..  .    ._.-. .--.
-                                             :    |   |  |`--.| (   ) |   |    |(   )\  \  / (.-' |   
-                                              `--''   `--|`--'`-'`-'`-`-  '    `-`-'  `' `'   `--''   
-                                                         ;                                            
-                                                      `-'                                             )";
-
+                                                   .--.            .       .   .---..                      
+                                                  :               _|_      |   |    |                      
+                                                  |    .--..  ..--.|  .-.  |   |--- | .-..  .    ._.-. .--.
+                                                  :    |   |  |`--.| (   ) |   |    |(   )\  \  / (.-' |   
+                                                   `--''   `--|`--'`-'`-'`-`-  '    `-`-'  `' `'   `--''   
+                                                              ;                                            
+                                                           `-'                                             )";
   cout << Title << endl;
 
   // Game mode options below title
