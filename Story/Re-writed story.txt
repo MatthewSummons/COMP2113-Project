@@ -108,7 +108,7 @@ In an urgent situation girl started thinking of the way to get out and decided t
 Baba Yaga had no choice but agree to give her crystal.
 
 
-(FIRST CRYSTAL OBTAINED)
+(FIRST CRYSTAL PIECE OBTAINED)
 
 
 
@@ -166,7 +166,7 @@ Koschei pleaded:
 * Do not let your dog eat me. I will give you my most precious posession: a mana crystal.
 
 
-(SECOND CRYSTAL OBTAINED)
+(SECOND CRYSTAL PIECE OBTAINED)
 
 
 
@@ -193,17 +193,24 @@ First head:
 * Okay, let's not argue. Let the girl choose how she wants to die.
 
 Choice:
-- Get burned by the dragon:
+
+Hera gets burned by the dragon in an instant.
+
+(BAD ENDING)
+
 
 
 Get trampled:
-End of the game.
+
+Without any time wasted, Hera gets trampled over by the dragon.
+
+(BAD ENDING)
 
 
 Get eaten:
 
-
-* Fine, I’ll choose to be eaten. But how are you going to eat me at the same time since there are three of you? Which one of you has sharper teeth, so my death will be quick and painless? Can you all show me your teeth? 
+* Fine, I’ll choose to be eaten. But how are you going to eat me at the same time since there are three of you? 
+  Which one of you has sharper teeth, so my death will be quick and painless? Can each of you show me your teeth? 
 
 
 Dragon bows his head down for a better look and the girl jumps on the neck.
@@ -214,7 +221,8 @@ A spirit appears and gives Hera a magic sword. She threatens the dragon:
 
 * I won't kill you if you give me your crystal. Otherwise, I will cut off your heads.
 * No, don't kill us. We will give you our crystal.
-* (third crystal taken)
+
+(THIRD CRYSTAL PIECE OBTAINED)
 
 
 Act 4: The Snow Queen
@@ -228,7 +236,9 @@ The girl froze and spoke to her:
 
 
 * I'm Hera and this is my dog ​​Lucky, I'm from Snowland, my father died and I'm looking for a means to resurrect my father.
-* You are a kind girl, but you disturbed my peace. And for that, you will die slowly. But there is one thing: if you become my successor, I will forgive you and let you live and I will teach you my art to turn people into ice. You will stay here forever. What do you choose?
+* You are a kind girl, but you disturbed my peace. And for that, you will die slowly. 
+  But there is one thing: if you become my successor, I will forgive you and let you live and I will teach you my art to turn people into ice. 
+  You will stay here forever. What do you choose?
 
 
 Choice:
@@ -245,13 +255,16 @@ And then a spirit arose and said:
 * With this torch, you can turn the entire kingdom of the Snow Queen into water.
 
 
-Hera put the torch into inventory. She was going to turn the entire kingdom, along with the queen, into water. The queen spoke:
+Hera put the torch into inventory. She was going to turn the entire kingdom, along with the queen, into water. 
+The queen spoke:
 
 
-* Girl, you are kind. You won't kill me, I didn't do you any harm. Perhaps you will leave me and my kingdom alone if I give you my magic crystal. You are kind, and not evil.
+* Girl, you are kind. You won't kill me, I didn't do you any harm. 
+  Perhaps you will leave me and my kingdom alone if I give you my magic crystal. 
+  You are kind girl, and not evil.
 
 
-(fourth crystal taken)
+(FOURTH CRYSTAL PIECE OBTAINED)
 
 
 
@@ -259,24 +272,36 @@ Hera put the torch into inventory. She was going to turn the entire kingdom, alo
 Then the spirit appears and smiles slyly. 
 
 
-* Well done girl, you were able to get what I could not get at the time. However, you don't know everything. 4 crystals are not enough to revive your father. I didn't tell you that I also have a crystal, which is the last component. Without this stone, you won't be able to revive your father. Only the power of five stones will give you what you want. But I was not going to give you my crystal, and I will not give it. And without my crystal, 4 crystals are worthless. Therefore, you have to give them to me.
+* Well done girl, you were able to get what I could not get at the time. However, you don't know everything. 
+  4 crystals are not enough to revive your father. I didn't tell you that I also have a crystal, which is the last component. 
+  Without this stone, you won't be able to revive your father. Only the power of five stones will give you what you want.
+  But I was not going to give you my crystal, and I will not give it. And without my crystal, 4 crystals are worthless. 
+  Therefore, you have to give them to me.
 * You deceived me, evil spirit. And I will not give you my crystals, which I have obtained.
 * Then I will kill you and take them from you.
 * Don't kill me and don't take my crystals from me. You are kind, helped me all the way through, and saved me from death.
-* I had my agenda all along, and I helped you for a reason. I will become the most powerful being on earth and rule the world forever.
-* Why do you need this power if it does not give you human and earthly happiness? Is this what happiness is? Rule the world and enslave the people. You don't even have friends.
+* I had my agenda all along, and I helped you for a reason.  
+  I will become the most powerful being on earth and rule the world forever.
+* Why do you need this power if it does not give you human and earthly happiness? 
+  Is this what happiness is? Rule the world and enslave the people. You don't even have friends. 
+
 Spirit thought:
+
 * Yes indeed. I never had friends and no one ever offered me. That's why I became evil.
 * Let's be friends then.
 * Are you serious?
 * Yes.
-* Then I'll help you revive your father. But you don't need the stones anymore, and I'm leaving them for myself. I decided to abandon my goals to enslave the world and will help people.
+* Then I'll help you revive your father. But you won't need the stones anymore, and I'm leaving them for myself. 
+  I decided to abandon my goals to enslave the world and will help people.
 
 
 Hera returns home with a magical flower. Putting the flower in her father's hand, she sees her father open his eyes.
 
+(GOOD ENDING)
 
-End.
+
+
+***The End***
 
 
 P.S.: We may integrate mini-games with the clues hidden inside of them between each act.
