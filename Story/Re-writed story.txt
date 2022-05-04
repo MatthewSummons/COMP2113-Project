@@ -2,7 +2,7 @@ Game title: Crystal flower
 
 
 Characters
-Hera - a 7-year-old girl who tries to revive her father and find the magical flower
+Hera - a young girl who tries to revive her father and find the magical flower
 Lucky - Hera’s companion husky left by her terminally ill father
 Moroz - a spirit that guides Hera throughout her adventures in finding crystal petals 
 
@@ -152,6 +152,7 @@ Become a zombie:
 Hera turned into one of Koschei’s obedient followers forever. She lost her mind and will to him.
 
 (BAD ENDING)
+
 
 
 - Become an animal
