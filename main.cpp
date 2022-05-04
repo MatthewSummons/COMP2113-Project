@@ -21,10 +21,19 @@ int main() {
   string stage = "";
   string *inventory = new string[inventory_length];
   
+  // Load data from save if continuing previous game, otherwise create a new save
   Start_Save_Load(game_mode, stage, inventory);
 
-  Play_Stage(stage);
-  
-  
+  cout << "The stage is " << stage << endl;
 
+  // Play corresponding stage
+  while (stage != "Final Battle") {
+    Play_Stage(stage, inventory);
+    Update_Stage(stage);
+    cout << "The stage is " << stage << endl;
+  }
+
+  // Play the Final Stage
+  Play_Stage(stage, inventory);
+  
 }

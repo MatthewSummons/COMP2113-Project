@@ -18,7 +18,7 @@ std::string stages [] = {
   "Monster 2",
   "Monster 3",
   "Monster 4",
-  "Final Battle "
+  "Final Battle"
 };
 
 void Start_Save_Load(const int game_mode, std::string &stage, std::string* inventory) {
@@ -55,9 +55,9 @@ void Start_Save_Load(const int game_mode, std::string &stage, std::string* inven
 void Save(const std::string stage, std::string *inventory) {
   Game_State game_status;
   
-  // 5 - 1 Stages excluding the final stage
+  // 5 Stages excluding the final stage
   std::string next_stage = "Corrupted";
-  for (int i = 0; i < 4; i++) {
+  for (int i = 0; i < 5; i++) {
     if (stage == stages[i])
       next_stage = stages[i+1];
   }
