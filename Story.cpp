@@ -300,7 +300,7 @@ void Monster_2 (string *inventory) {
     print("Koschei pleaded:");
     print("* Do not let your dog eat me. I will give you my most precious possession: a mana crystal.");
     print("");
-    print("(SECOND CRYSTAL PIECE OBTAINED)");
+    print("(CRYSTAL PIECE OBTAINED)");
     // INVENTORY UPDATE
 
     // RANDOM CHOICE OF THE NEXT EVENT
@@ -356,23 +356,102 @@ void Monster_3 (string *inventory) {
     print("  Can each of you show me your teeth? I'll be the judge.");
     print("Dragon bows his heads down for a better look and the girl jumps on the neck.");
     print("A spirit appears and gives Hera a magic sword.");
+    print("Sword obtained)");
     // INVENTORY UPDATE
     print("Having picked up the sword, she threatens the dragon:");
     print("* I won't kill you if you give me your crystal. Otherwise, I will cut off your heads.");
+    print("* No, don't kill us. We will give you our crystal.");
     print("");
+    print("(CRYSTAL PIECE OBTAINED)");
+    // INVENTORY UPDATE
 
+    // RANDOM CHOICE OF THE NEXT EVENT
 
-  cout << "MONSTER 3" << endl;
+  // minigame_3();
 }
 
 void Monster_4 (string *inventory) {
   system("clear");
+  print("The Snow Queen");
+  print("");
+  print("Seeing a girl in her queendom, The Snow Queen said:");
+  print("* Who are you, where are you from, and what do you need in here?");
+  print("The girl froze and answered truthfully:");
+  print("* I'm Hera and this is my dog Lucky, I'm from Snowland, my father died and I'm looking for a means to resurrect my father.");
+  print("* You are a kind girl, but you disturbed my peace. And for that, you will die slowly.");
+  print("  But there is one thing.");
+  print("  If you'll agree to become my successor, I'll forgive you and let you live.");
+  print("  You will stay here forever. What do you choose?");
+  print("");
+  print("Choice:");
+  print("- Die slowly");
+  print("- Become The Snow Queen's daughter");
+  // CHOICE 5
+  // If pick "- Die slowly":
+    print("Hera died of a slow and painful death getting frostbitten.");
+    // GAME OVER
 
-  cout << "MONSTER 4" << endl;
+  // CHOICE 5
+  // If pick "- Become The Snow Queen's daughter":
+    print("And then a spirit arose and said:");
+    print("* With this torch, you can turn the entire queendom of the Snow Queen into water.");
+    // INVENTORY UPDATE
+    print("(Torch obtained)");
+    print("Hera took the torch in her hands. She was going to turn the entire kingdom, along with the queen, into water.");
+    print("The queen spoke:");
+    print("* Girl, you are kind. You won't kill me, I didn't do you any harm.");
+    print("  Perhaps you will leave me and my kingdom alone if I give you my magic crystal.");
+    print("  You are kind girl, and not evil.");
+    print("");
+    print("(CRYSTAL PIECE OBTAINED)");
+    print("");
+
+  // minigame_4();
 }
 
 void Final_Battle(string *inventory) {
   system("clear");
+  print("Arriving back home, Hera tries to put the crystal pieces together. However, to no vail.");
+  print("Then the spirit appears and smiles slyly. ");
+  print("* Well done girl, you were able to get what I could not get at the time. However, you don't know everything. ");
+  print("  4 crystals are not enough to revive your father.");
+  print("  I didn't tell you that I also have a crystal, which is the last component.");
+  print("  Without this stone, you won't be able to revive your father.");
+  print("  Only the power of five stones will give you what you want.");
+  print("  But I was not going to give you my crystal, and I will not give it. ");
+  print("  And without my crystal, 4 crystals are completely worthless.");
+  print("  Therefore, you have to give them to me.");
+  print("");
+  print("Choice:");
+  print("- Try to change the mind of the evil spirit");
+  print("- Give up the crystals to the evil spirit");
+  // CHOICE 6
+  // If pick "- Try to change the mind of the evil spirit":
+    print("* You deceived me, evil spirit. And I will not give you my crystals, which I have obtained.");
+    print("* Then I will kill you and take them from you.");
+    print("* Don't kill me and don't take my crystals from me. You are kind, helped me all the way through, and saved me from death.");
+    print("* I had my agenda all along, and I helped you for a reason.");
+    print("  I will become the most powerful being on earth and rule the world forever.");
+    print("* Why do you need this power if it does not give you human and earthly happiness?");
+    print("  Is this what happiness is? Rule the world and enslave the people. You don't even have friends.");
+    print("Spirit thought:");
+    print("* Yes indeed. I never had friends and no one ever offered me. That's why I became evil.");
+    print("* Let's be friends then.");
+    print("* Are you being serious?");
+    print("* Yes.");
+    print("* Then I'll help you revive your father. But you won't need the stones anymore, and I'm leaving them for myself.");
+    print("  I decided to abandon my goals to enslave the world and will help people.");
+    print("Hera returns home with a magical flower. Putting the flower in her father's hand, she sees her father open his eyes.");
+    print("");
+    print("");
+    print("~THE END~");
 
-  cout << "FINALE" << endl;
+  // CHOICE 6
+  // If pick "- Give up the crystals to the evil spirit":
+    print("Hera gave her crystals to the spirit.");
+    print("The spirit kills the girl once obtaining what he wanted.");
+    print("With the power of the crystal flower, he became the most powerful being on earth.");
+    print("He did many bad deeds and brought the people misery and destruction.");
+    print("");
+    // GAME OVER
 }
