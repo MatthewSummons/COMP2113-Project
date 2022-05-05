@@ -221,7 +221,7 @@ void Introduction(string *inventory) {
 void Monster_1 (string *inventory) {
   system("clear");
   
-  remove_item("Stick", inventory);
+  // remove_item("Stick", inventory);
   
   print("Hut of the Baba Yaga");
   print("");
@@ -357,6 +357,7 @@ void Monster_3 (string *inventory) {
     print("Dragon bows his heads down for a better look and the girl jumps on the neck.");
     print("A spirit appears and gives Hera a magic sword.");
     print("Sword obtained)");
+    add_item("Sword", inventory);
     // INVENTORY UPDATE
     print("Having picked up the sword, she threatens the dragon:");
     print("* I won't kill you if you give me your crystal. Otherwise, I will cut off your heads.");
@@ -366,7 +367,7 @@ void Monster_3 (string *inventory) {
     // INVENTORY UPDATE
 
     // RANDOM CHOICE OF THE NEXT EVENT
-
+    remove_item("Sword", inventory);
   // minigame_3();
 }
 
@@ -396,6 +397,7 @@ void Monster_4 (string *inventory) {
     print("And then a spirit arose and said:");
     print("* With this torch, you can turn the entire queendom of the Snow Queen into water.");
     // INVENTORY UPDATE
+    add_item("Torch", inventory);
     print("(Torch obtained)");
     print("Hera took the torch in her hands. She was going to turn the entire kingdom, along with the queen, into water.");
     print("The queen spoke:");
@@ -405,8 +407,7 @@ void Monster_4 (string *inventory) {
     print("");
     print("(CRYSTAL PIECE OBTAINED)");
     print("");
-
-  // minigame_4();
+    remove_item("Torch", inventory);
 }
 
 void Final_Battle(string *inventory) {
@@ -454,4 +455,380 @@ void Final_Battle(string *inventory) {
     print("He did many bad deeds and brought the people misery and destruction.");
     print("");
     // GAME OVER
+}
+
+
+const char width = 20, height = 10;
+char player = 'P';                  // player character
+int posx = 1, posy = 1;
+char action;
+
+void playerMove ();
+
+struct enemies
+{
+	char symbol;
+	bool active;
+	int x;
+	int y;
+};
+
+char maze1[height][width] = {
+
+	{'#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'}, //0
+	{'#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', '#', '#', ' ', '#'}, //1
+	{'#', ' ', '#', ' ', '#', '#', '#', ' ', ' ', ' ', ' ', '#', '#', ' ', '#', ' ', ' ', ' ', ' ', '#'}, //2
+	{'#', ' ', '#', ' ', '#', ' ', '#', ' ', '#', ' ', '#', '#', ' ', ' ', ' ', '#', ' ', '#', '#', '#'}, //3
+	{'#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', '#', ' ', ' ', '#', ' ', '#', ' ', ' ', ' ', '#'}, //4
+	{'#', '#', ' ', '#', ' ', '#', '#', '#', '#', ' ', '#', ' ', '#', '#', ' ', ' ', ' ', '#', ' ', '#'}, //5
+	{'#', ' ', ' ', '#', ' ', ' ', ' ', ' ', '#', ' ', '#', ' ', ' ', ' ', '#', ' ', '#', '#', ' ', '#'}, //6
+	{'#', ' ', '#', '#', '#', ' ', '#', ' ', ' ', ' ', '#', '#', '#', ' ', ' ', ' ', ' ', '#', ' ', '#'}, //7
+	{'#', ' ', ' ', ' ', ' ', ' ', '#', ' ', '#', ' ', '#', ' ', ' ', ' ', '#', '#', ' ', ' ', ' ', '#'}, //8
+	//0     1     2    3    4    5    6    7    8    9    0    1    2    3    4    5    6    7    8    9
+};
+
+char maze2[height][width] = {
+
+	{'#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'}, //0
+	{'#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', '#', '#', ' ', '#'}, //1
+	{'#', ' ', '#', '#', '#', '#', '#', ' ', ' ', ' ', ' ', '#', '#', ' ', '#', ' ', ' ', ' ', ' ', '#'}, //2
+	{'#', ' ', '#', ' ', ' ', ' ', '#', ' ', ' ', '#', '#', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', '#'}, //3
+	{'#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', '#', ' ', ' ', '#', ' ', '#', ' ', ' ', ' ', '#'}, //4
+	{'#', ' ', ' ', '#', ' ', '#', '#', '#', ' ', ' ', ' ', ' ', '#', '#', ' ', ' ', ' ', '#', ' ', '#'}, //5
+	{'#', '#', ' ', '#', ' ', ' ', ' ', ' ', '#', ' ', '#', ' ', ' ', ' ', '#', ' ', '#', '#', ' ', '#'}, //6
+	{'#', '#', ' ', ' ', '#', ' ', '#', ' ', ' ', ' ', '#', '#', '#', ' ', ' ', ' ', ' ', '#', ' ', '#'}, //7
+	{'#', '#', '#', ' ', ' ', ' ', '#', ' ', '#', ' ', '#', '#', ' ', ' ', '#', '#', ' ', ' ', ' ', '#'}, //8
+	//0     1     2    3    4    5    6    7    8    9    0    1    2    3    4    5    6    7    8    9
+};
+
+char maze3[height][width] = {
+
+	{'#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'}, //0
+	{'#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', '#'}, //1
+	{'#', ' ', '#', '#', ' ', '#', ' ', '#', '#', ' ', ' ', '#', '#', ' ', '#', ' ', ' ', '#', ' ', '#'}, //2
+	{'#', ' ', ' ', ' ', ' ', '#', ' ', '#', ' ', ' ', '#', '#', ' ', ' ', '#', '#', '#', '#', ' ', '#'}, //3
+	{'#', ' ', ' ', ' ', '#', '#', ' ', '#', ' ', '#', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', '#'}, //4
+	{'#', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', '#', ' ', ' ', ' ', ' ', ' ', '#', '#'}, //5
+	{'#', '#', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', '#', ' ', '#', '#'}, //6
+	{'#', ' ', '#', ' ', '#', ' ', '#', '#', '#', ' ', ' ', '#', '#', ' ', ' ', ' ', ' ', ' ', ' ', '#'}, //7
+	{'#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', '#', ' ', ' ', ' ', '#'}, //8
+	//0     1     2    3    4    5    6    7    8    9    0    1    2    3    4    5    6    7    8    9
+};
+
+// MINI GAME 1
+void mini_game1() 
+{
+
+	while (action != 'Q' || 'q')
+	{	cout << endl;
+		cout << "Press WASD to move... " << endl;
+		cout << endl;
+
+	maze1[posx][posy] = player;
+
+	for (int y0 = 0; y0 < height; y0++){             // runs 2d array
+	 	cout << endl;
+		for (int x0 = 0; x0 < height; x0++)
+		{
+			cout << maze1[y0][x0];
+		}
+
+		//1st enemy 
+	enemies enemy1;
+	enemy1.symbol = 'L';
+	enemy1.active = true;
+	enemy1.x = 3;
+	enemy1.y = 6;
+	maze1[enemy1.y][enemy1.x] = enemy1.symbol;
+		//2nd enemy
+	enemies enemy2;
+	enemy2.symbol = 'I';
+	enemy2.active = true;
+	enemy2.x = 8;
+	enemy2.y = 1;
+	maze1[enemy2.y][enemy2.x] = enemy2.symbol;
+
+		//3rd enemy
+	enemies enemy3;
+	enemy3.symbol = 'E';
+	enemy3.active = true;
+	enemy3.x = 6;
+	enemy3.y = 6;
+	maze1[enemy3.y][enemy3.x] = enemy3.symbol;
+	
+	}
+
+	playerMove();
+	}
+
+	return;
+}
+
+	void playerMove()
+	{
+		cout << "\nYour move: ";
+		cin >> action;
+
+		int prevposx = posx;
+		int prevposy = posy;
+		char space = ' ';                  // ASCII for space
+
+		switch (action)	
+	{
+		case 'a':
+			if (maze1 [posx][posy - 1] != '#') {      // future position is not hash
+				posy--;
+	//		cout << posx << ',' << posy << endl;
+			maze1[prevposx][prevposy] = space;}
+		system("cls");
+		break;
+
+		case 'd':
+			if (maze1 [posx][posy + 1] != '#'){
+				posy++;
+	//		cout << posx << ',' << posy << endl;
+			maze1[prevposx][prevposy] = space;}
+		system("cls");
+		break;
+
+		case 's':
+			if (maze1 [posx + 1][posy] != '#'){
+				posx++;
+	//		cout << posx << ',' << posy << endl;
+			maze1[prevposx][prevposy] = space;}
+		system("cls");                               // system clear screen to redraw maze
+		break;
+
+		case 'w':
+			if (maze1 [posx - 1][posy] != '#'){
+				posx--;
+	//		cout << posx << ',' << posy << endl;
+			maze1[prevposx][prevposy] = space;}
+		system("cls");
+		break;
+
+		default :
+		cout << "Incorrect action... try a valid key" << endl;
+		break;
+		}
+}
+
+// MINI GAME 2
+void mini_game2() 
+{
+
+	while (action != 'Q' || 'q')
+	{	cout << endl;
+		cout << "Press WASD to move... " << endl;
+		cout << endl;
+
+	maze2[posx][posy] = player;
+
+	for (int y0 = 0; y0 < height; y0++){             // runs 2d array
+	 	cout << endl;
+		for (int x0 = 0; x0 < height; x0++)
+		{
+			cout << maze2[y0][x0];
+		}
+
+  	//1st enemy 
+	enemies enemy1;
+	enemy1.symbol = 'E';
+	enemy1.active = true;
+	enemy1.x = 3;
+	enemy1.y = 6;
+	maze2[enemy1.y][enemy1.x] = enemy1.symbol;
+		//2nd enemy
+	enemies enemy2;
+	enemy2.symbol = 'V';
+	enemy2.active = true;
+	enemy2.x = 8;
+	enemy2.y = 4;
+	maze2[enemy2.y][enemy2.x] = enemy2.symbol;
+
+		//3rd enemy
+	enemies enemy3;
+	enemy3.symbol = 'I';
+	enemy3.active = true;
+	enemy3.x = 6;
+	enemy3.y = 6;
+	maze2[enemy3.y][enemy3.x] = enemy3.symbol;
+	
+		//4th enemy
+	enemies enemy4;
+	enemy4.symbol = 'L';
+	enemy4.active = true;
+	enemy4.x = 2;
+	enemy4.y = 3;
+	maze2[enemy4.y][enemy4.x] = enemy4.symbol;
+	
+	}
+
+	playerMove();
+	}
+
+	return;
+}
+
+	void playerMove()
+	{
+		cout << "\nYour move: ";
+		cin >> action;
+
+		int prevposx = posx;
+		int prevposy = posy;
+		char space = ' ';                  // ASCII for space
+
+		switch (action)	
+	{
+		case 'a':
+			if (maze2 [posx][posy - 1] != '#') {      // future position is not hash
+				posy--;
+	//		cout << posx << ',' << posy << endl;
+			maze2[prevposx][prevposy] = space;}
+		system("cls");
+		break;
+
+		case 'd':
+			if (maze2 [posx][posy + 1] != '#'){
+				posy++;
+	//		cout << posx << ',' << posy << endl;
+			maze2[prevposx][prevposy] = space;}
+		system("cls");
+		break;
+
+		case 's':
+			if (maze2 [posx + 1][posy] != '#'){
+				posx++;
+	//		cout << posx << ',' << posy << endl;
+			maze2[prevposx][prevposy] = space;}
+		system("cls");                               // system clear screen to redraw maze
+		break;
+
+		case 'w':
+			if (maze2 [posx - 1][posy] != '#'){
+				posx--;
+	//		cout << posx << ',' << posy << endl;
+			maze2[prevposx][prevposy] = space;}
+		system("cls");
+		break;
+
+		default :
+		cout << "Incorrect action... try a valid key" << endl;
+		break;
+		}
+}
+
+// MINI GAME 3
+void mini_game3() 
+{
+
+	while (action != 'Q' || 'q')
+	{	cout << endl;
+		cout << "Press WASD to move... " << endl;
+		cout << endl;
+
+	maze3[posx][posy] = player;
+
+	for (int y0 = 0; y0 < height; y0++){             // runs 2d array
+	 	cout << endl;
+		for (int x0 = 0; x0 < height; x0++)
+		{
+			cout << maze3[y0][x0];
+		}
+
+  	//1st enemy 
+	enemies enemy1;
+	enemy1.symbol = 'I';
+	enemy1.active = true;
+	enemy1.x = 3;
+	enemy1.y = 6;
+	maze3[enemy1.y][enemy1.x] = enemy1.symbol;
+		//2nd enemy
+	enemies enemy2;
+	enemy2.symbol = 'I';
+	enemy2.active = true;
+	enemy2.x = 5;
+	enemy2.y = 4;
+	maze3[enemy2.y][enemy2.x] = enemy2.symbol;
+
+		//3rd enemy
+	enemies enemy3;
+	enemy3.symbol = 'S';
+	enemy3.active = true;
+	enemy3.x = 6;
+	enemy3.y = 6;
+	maze3[enemy3.y][enemy3.x] = enemy3.symbol;
+	
+		//4th enemy
+	enemies enemy4;
+	enemy4.symbol = 'R';
+	enemy4.active = true;
+	enemy4.x = 2;
+	enemy4.y = 3;
+	maze3[enemy4.y][enemy4.x] = enemy4.symbol;
+	
+	    //5th enemy
+	enemies enemy5;
+	enemy5.symbol = 'T';
+	enemy5.active = true;
+	enemy5.x = 6;
+	enemy5.y = 3;
+	maze3[enemy5.y][enemy5.x] = enemy5.symbol;
+	
+	}
+
+	playerMove();
+	}
+
+	return;
+}
+
+	void playerMove()
+	{
+		cout << "\nYour move: ";
+		cin >> action;
+
+		int prevposx = posx;
+		int prevposy = posy;
+		char space = ' ';                  // ASCII for space
+
+		switch (action)	
+	{
+		case 'a':
+			if (maze3 [posx][posy - 1] != '#') {      // future position is not hash
+				posy--;
+	//		cout << posx << ',' << posy << endl;
+			maze3[prevposx][prevposy] = space;}
+		system("cls");
+		break;
+
+		case 'd':
+			if (maze3 [posx][posy + 1] != '#'){
+				posy++;
+	//		cout << posx << ',' << posy << endl;
+			maze3[prevposx][prevposy] = space;}
+		system("cls");
+		break;
+
+		case 's':
+			if (maze3 [posx + 1][posy] != '#'){
+				posx++;
+	//		cout << posx << ',' << posy << endl;
+			maze3[prevposx][prevposy] = space;}
+		system("cls");                               // system clear screen to redraw maze
+		break;
+
+		case 'w':
+			if (maze3 [posx - 1][posy] != '#'){
+				posx--;
+	//		cout << posx << ',' << posy << endl;
+			maze3[prevposx][prevposy] = space;}
+		system("cls");
+		break;
+
+		default :
+		cout << "Incorrect action... try a valid key" << endl;
+		break;
+		}
 }
