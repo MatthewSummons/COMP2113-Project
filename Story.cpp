@@ -568,7 +568,6 @@ void mini_game1()
 	}
 
 	playerMove1();
-  system("cls");
 	}
 
 	return;
@@ -675,7 +674,6 @@ void mini_game2()
 	}
 
 	playerMove2();
-  system("cls");
 	}
 
 	return;
@@ -790,7 +788,6 @@ void mini_game3()
 	}
 
 	playerMove3();
-  system("cls");
 	}
 
 	return;
