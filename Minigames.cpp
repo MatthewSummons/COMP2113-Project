@@ -1,14 +1,11 @@
+// MAZE MINI GAME 
 #include "Minigames.hpp"
 #include "Story.hpp"    // For print()
-
-// Include other dependincies here
-// #include <iostream>
 #include <string>
 #include <iostream>
 
 using namespace std;
 
-// MAZE MINI GAME 
 const char width = 20, height = 10;
 char player = 'P';                  // player character
 int posx = 1, posy = 1;
