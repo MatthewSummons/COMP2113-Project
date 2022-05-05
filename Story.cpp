@@ -578,7 +578,7 @@ void mini_game1()
 		case 'a':
 			if (maze1 [posx][posy - 1] != '#') {      // future position is not hash
 				posy--;
-	//		cout << posx << ',' << posy << endl;
+	
 			maze1[prevposx][prevposy] = space;}
 		system("cls");
 		break;
@@ -586,7 +586,7 @@ void mini_game1()
 		case 'd':
 			if (maze1 [posx][posy + 1] != '#'){
 				posy++;
-	//		cout << posx << ',' << posy << endl;
+
 			maze1[prevposx][prevposy] = space;}
 		system("cls");
 		break;
@@ -594,7 +594,7 @@ void mini_game1()
 		case 's':
 			if (maze1 [posx + 1][posy] != '#'){
 				posx++;
-	//		cout << posx << ',' << posy << endl;
+
 			maze1[prevposx][prevposy] = space;}
 		system("cls");                               // system clear screen to redraw maze
 		break;
@@ -602,7 +602,7 @@ void mini_game1()
 		case 'w':
 			if (maze1 [posx - 1][posy] != '#'){
 				posx--;
-	//		cout << posx << ',' << posy << endl;
+	
 			maze1[prevposx][prevposy] = space;}
 		system("cls");
 		break;
@@ -684,7 +684,7 @@ void mini_game2()
 		case 'a':
 			if (maze2 [posx][posy - 1] != '#') {      // future position is not hash
 				posy--;
-	//		cout << posx << ',' << posy << endl;
+	
 			maze2[prevposx][prevposy] = space;}
 		system("cls");
 		break;
@@ -692,7 +692,7 @@ void mini_game2()
 		case 'd':
 			if (maze2 [posx][posy + 1] != '#'){
 				posy++;
-	//		cout << posx << ',' << posy << endl;
+
 			maze2[prevposx][prevposy] = space;}
 		system("cls");
 		break;
@@ -700,7 +700,7 @@ void mini_game2()
 		case 's':
 			if (maze2 [posx + 1][posy] != '#'){
 				posx++;
-	//		cout << posx << ',' << posy << endl;
+
 			maze2[prevposx][prevposy] = space;}
 		system("cls");                               // system clear screen to redraw maze
 		break;
@@ -708,7 +708,7 @@ void mini_game2()
 		case 'w':
 			if (maze2 [posx - 1][posy] != '#'){
 				posx--;
-	//		cout << posx << ',' << posy << endl;
+	
 			maze2[prevposx][prevposy] = space;}
 		system("cls");
 		break;
@@ -798,7 +798,7 @@ void mini_game3()
 		case 'a':
 			if (maze3 [posx][posy - 1] != '#') {      // future position is not hash
 				posy--;
-	//		cout << posx << ',' << posy << endl;
+	
 			maze3[prevposx][prevposy] = space;}
 		system("cls");
 		break;
@@ -806,7 +806,7 @@ void mini_game3()
 		case 'd':
 			if (maze3 [posx][posy + 1] != '#'){
 				posy++;
-	//		cout << posx << ',' << posy << endl;
+	
 			maze3[prevposx][prevposy] = space;}
 		system("cls");
 		break;
@@ -814,7 +814,7 @@ void mini_game3()
 		case 's':
 			if (maze3 [posx + 1][posy] != '#'){
 				posx++;
-	//		cout << posx << ',' << posy << endl;
+
 			maze3[prevposx][prevposy] = space;}
 		system("cls");                               // system clear screen to redraw maze
 		break;
@@ -822,7 +822,7 @@ void mini_game3()
 		case 'w':
 			if (maze3 [posx - 1][posy] != '#'){
 				posx--;
-	//		cout << posx << ',' << posy << endl;
+
 			maze3[prevposx][prevposy] = space;}
 		system("cls");
 		break;
