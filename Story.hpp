@@ -12,6 +12,10 @@ void Ask_Save(const std::string stage, std::string *inventory);
 // Update Stage after completing a stage
 void Update_Stage(std::string &stage);
 
+// Add/Remove items from inventory
+void add_item(std::string item, std::string *inventory);
+void remove_item(std::string item, std::string *inventory);
+
 // Print the story for the respective stage
 void Introduction(std::string *inventory);
 

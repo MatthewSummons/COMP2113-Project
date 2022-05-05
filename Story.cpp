@@ -52,7 +52,7 @@ struct Choice {
 
 typedef struct Choice Choice;
 
-
+// Print a string character by character with a delay b/w each character
 void print(string str, int delay, bool isEndLine) {
   int len = str.length();
   for (int i = 0; i < len; i++) {
@@ -64,6 +64,38 @@ void print(string str, int delay, bool isEndLine) {
 
   if (isEndLine) {
     cout << endl;
+  }
+}
+
+// Add string item to the given inventory
+void add_item(string item, string *inventory) {
+  int filled_slots = 0;
+  string *current = inventory;
+  // Find an empty slot in the inventory, if no empty slots break out
+  while (*current != "Empty") {
+    print(*current);
+    filled_slots++;
+    // inventory size = 8
+    if (filled_slots > 8)
+      print("Inventory is full");
+    
+    current++;
+  }
+  
+  // Move item into empty slot
+  *current = item;
+}
+
+// Remove a given item from the inventory
+void remove_item(string item, string *inventory) {
+  string *current = inventory;
+
+  for (int i = 0; i < 8; i++) {
+    // Remove itemy entry and replace it with empty instead
+    if (*current == item) {
+      *current = "Empty";
+    }
+    current++;    // Advance the pointer
   }
 }
 
@@ -100,7 +132,7 @@ void Play_Stage(string &stage, string *inventory) {
   cin >> response;
 
   // Quit out of game
-  if ((response == "n") || (response == "Y")) {
+  if ((response == "n") || (response == "N")) {
     print("Thanks for playing! Come back around again!", 50);
     exit(1);
   }
@@ -139,43 +171,46 @@ void Introduction(string *inventory) {
   system("clear");
 
   print("Introduction");
+
+  add_item("Stick", inventory);
+
   print("");
   print("Once upon a time, there was a little girl. Her name was Hera.");
-  print("She lived with her father, her step-mother and her sister in a small village called Snowland.");
-  print("She also had a loyal husky friend named Lucky that her father has gifted to her.");
-  print("One day, the girl's father died of an unknown illness.");
-  print("He was the most important person for her and she loved him with all her heart.");
-  print("The girl mourned day and night for her father.");
-  print("Suddenly, out of the darkness emerged a creature that called itself the spirit of Frost who called himself Moroz.");
-  print("The Spirit of Frost appears to all the dead.");
-  print("He looked at the girl appearing to be in deep thoughts.");
-  print("Soon the spirit spoke up:");
-  print("");
-  print("* Do you want to bring your father back to life?");
-  print("* Yes, for all I have. But why are you asking me that? It's impossible.");
-  print("* Girl, what if I said that it is possible?");
-  print("  But everything comes with a price.");
-  print("  I will tell you the way.");
-  print("  You need magic crystals that will revive your father.");
-  print("  Crystals are held by evil Baba Yaga, Koshchei the Immortal, Zmey Gorynych and the Snow Queen.");
-  print("  If you manage to collect these crystals, you can make a magic flower by combing them. ");
-  print("  This flower is very unusual, as it contains the magical power of all its current owners.");
-  print("  The one who takes a possession of this flower can translate all their conceivable and inconceivable desires into reality.");
-  print("  This will be more than enough to revive your father.");
-  print("  I am a kind spirit, so I will help you take possession of these crystals.");
-  print("");
-  print("Choice:");
-  print("- Agree");
-  print("- Disagree");
+  // print("She lived with her father, her step-mother and her sister in a small village called Snowland.");
+  // print("She also had a loyal husky friend named Lucky that her father has gifted to her.");
+  // print("One day, the girl's father died of an unknown illness.");
+  // print("He was the most important person for her and she loved him with all her heart.");
+  // print("The girl mourned day and night for her father.");
+  // print("Suddenly, out of the darkness emerged a creature that called itself the spirit of Frost who called himself Moroz.");
+  // print("The Spirit of Frost appears to all the dead.");
+  // print("He looked at the girl appearing to be in deep thoughts.");
+  // print("Soon the spirit spoke up:");
+  // print("");
+  // print("* Do you want to bring your father back to life?");
+  // print("* Yes, for all I have. But why are you asking me that? It's impossible.");
+  // print("* Girl, what if I said that it is possible?");
+  // print("  But everything comes with a price.");
+  // print("  I will tell you the way.");
+  // print("  You need magic crystals that will revive your father.");
+  // print("  Crystals are held by evil Baba Yaga, Koshchei the Immortal, Zmey Gorynych and the Snow Queen.");
+  // print("  If you manage to collect these crystals, you can make a magic flower by combing them. ");
+  // print("  This flower is very unusual, as it contains the magical power of all its current owners.");
+  // print("  The one who takes a possession of this flower can translate all their conceivable and inconceivable desires into reality.");
+  // print("  This will be more than enough to revive your father.");
+  // print("  I am a kind spirit, so I will help you take possession of these crystals.");
+  // print("");
+  // print("Choice:");
+  // print("- Agree");
+  // print("- Disagree");
 
   // CHOICE 1
   // If pick "- Agree":
     //RANDOM CHOICE OF THE NEXT EVENT
 
   // If pick "- Disagree":
-    print("* You seemed to be a sensible child until now. You disappointed me.");
-    print("  Useless girl, since you foolishly declined my generous offer, I will kill you.");
-    print("");
+    // print("* You seemed to be a sensible child until now. You disappointed me.");
+    // print("  Useless girl, since you foolishly declined my generous offer, I will kill you.");
+    // print("");
     // GAME OVER
 
   // R"()" for raw strings.
@@ -185,6 +220,8 @@ void Introduction(string *inventory) {
 
 void Monster_1 (string *inventory) {
   system("clear");
+  
+  remove_item("Stick", inventory);
   
   print("Hut of the Baba Yaga");
   print("");
