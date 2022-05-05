@@ -38,5 +38,4 @@ int main() {
   
   // Play the Final Stage
   Play_Stage(stage, inventory);
-  
 }

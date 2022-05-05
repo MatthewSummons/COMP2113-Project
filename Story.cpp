@@ -21,14 +21,36 @@ std::string stages_alias[] = {
   "Final Battle"
 };
 
-// Constructor & tie in with end screen
-// ! for the last save
 // ! write func to update inventory (Add/ Remove)
 // ! Pass inventory to story functions
 struct Choice {
+  // Choice Presented to the Player
   string line;
+  // End Screen line if incorrect choice made
   string end_screen;
+
+  // Constructor for Struct
+  Choice(std::string line, std::string end_screen = "You made the wrong choice") {
+    this -> line = line;
+    this -> end_screen = end_screen;
+  }
+
+  // The function which offers the choice to the player
+  void Decide(int delay = 35, bool isEndLine = true) {
+    print(this -> line, delay, isEndLine);
+    std::string response;
+    std::cin >> response;
+
+    if (response == "Y" || response == "y")
+      return;
+    
+    // Show End Screen for selecting the wrong choice
+    End_Screen(this -> end_screen);
+    
+  }
 };
+
+typedef struct Choice Choice;
 
 
 void print(string str, int delay, bool isEndLine) {
@@ -120,6 +142,11 @@ void Introduction(string *inventory) {
 
 
   print("Introduction");
+
+  Choice choice = Choice("Continue [Y/n]", "Fuck you!");
+
+  choice.Decide();
+
 
   // R"()" for raw strings.
    
