@@ -260,6 +260,7 @@ void Monster_1 (string *inventory) {
     print("(FIRST CRYSTAL PIECE OBTAINED)");
 
     // INVENTORY UPDATE
+    add_item("Blue crystal", inventory);
 
     // RANDOM CHOICE OF THE NEXT EVENT
 
@@ -302,7 +303,7 @@ void Monster_2 (string *inventory) {
     print("");
     print("(CRYSTAL PIECE OBTAINED)");
     // INVENTORY UPDATE
-
+    add_item("Red crystal", inventory);
     // RANDOM CHOICE OF THE NEXT EVENT
 
   // CHOICE 3
@@ -365,7 +366,7 @@ void Monster_3 (string *inventory) {
     print("");
     print("(CRYSTAL PIECE OBTAINED)");
     // INVENTORY UPDATE
-
+    add_item("Yellow crystal", inventory);
     // RANDOM CHOICE OF THE NEXT EVENT
     remove_item("Sword", inventory);
   // minigame_3();
@@ -406,6 +407,8 @@ void Monster_4 (string *inventory) {
     print("  You are kind girl, and not evil.");
     print("");
     print("(CRYSTAL PIECE OBTAINED)");
+    // INVENTORY UPDATE
+    add_item("Green crystal", inventory);
     print("");
     remove_item("Torch", inventory);
 }
@@ -426,6 +429,7 @@ void Final_Battle(string *inventory) {
   print("Choice:");
   print("- Try to change the mind of the evil spirit");
   print("- Give up the crystals to the evil spirit");
+
   // CHOICE 6
   // If pick "- Try to change the mind of the evil spirit":
     print("* You deceived me, evil spirit. And I will not give you my crystals, which I have obtained.");
@@ -442,6 +446,9 @@ void Final_Battle(string *inventory) {
     print("* Yes.");
     print("* Then I'll help you revive your father. But you won't need the stones anymore, and I'm leaving them for myself.");
     print("  I decided to abandon my goals to enslave the world and will help people.");
+    print("(CRYSTAL PIECE OBTAINED)");
+    // INVENTORY UPDATE
+    add_item("White crystal", inventory);
     print("Hera returns home with a magical flower. Putting the flower in her father's hand, she sees her father open his eyes.");
     print("");
     print("");
@@ -457,7 +464,7 @@ void Final_Battle(string *inventory) {
     // GAME OVER
 }
 
-
+// MAZE MINI GAME 
 const char width = 20, height = 10;
 char player = 'P';                  // player character
 int posx = 1, posy = 1;
