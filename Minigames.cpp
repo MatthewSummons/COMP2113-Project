@@ -6,7 +6,7 @@
 
 using namespace std;
 
-const char width = 20, height = 10;
+const char width = 20, height = 9;
 char player = 'P';                  // player character
 int posx = 1, posy = 1;
 char action;
