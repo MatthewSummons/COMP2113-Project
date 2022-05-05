@@ -463,7 +463,9 @@ char player = 'P';                  // player character
 int posx = 1, posy = 1;
 char action;
 
-void playerMove ();
+void playerMove1 ();
+void playerMove2 ();
+void playerMove3 ();
 
 struct enemies
 {
@@ -558,13 +560,13 @@ void mini_game1()
 	
 	}
 
-	playerMove();
+	playerMove1();
 	}
 
 	return;
 }
 
-	void playerMove()
+	void playerMove1()
 	{
 		cout << "\nYour move: ";
 		cin >> action;
@@ -664,13 +666,13 @@ void mini_game2()
 	
 	}
 
-	playerMove();
+	playerMove2();
 	}
 
 	return;
 }
 
-	void playerMove()
+	void playerMove2()
 	{
 		cout << "\nYour move: ";
 		cin >> action;
@@ -778,13 +780,13 @@ void mini_game3()
 	
 	}
 
-	playerMove();
+	playerMove3();
 	}
 
 	return;
 }
 
-	void playerMove()
+	void playerMove3()
 	{
 		cout << "\nYour move: ";
 		cin >> action;
