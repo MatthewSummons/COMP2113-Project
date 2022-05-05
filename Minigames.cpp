@@ -114,13 +114,13 @@ void mini_game1()
 	
 	}
 
-	playerMove();
+	playerMove1();
 	}
 
 	return;
 }
 
-	void playerMove()
+	void playerMove1()
 	{
 		cout << "\nYour move: ";
 		cin >> action;
