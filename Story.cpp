@@ -8,8 +8,9 @@
 using namespace std;
 
 #include "Story.hpp"
-#include "Save_Load.hpp"
-#include "End_Screen.hpp"
+#include "Save_Load.hpp"    // For Saving Files
+#include "Minigames.hpp"    // For Minigames
+#include "End_Screen.hpp"   // For End Screen
 
 // Originally in SaveLoad.cpp
 std::string stages_alias[] = {
@@ -22,7 +23,6 @@ std::string stages_alias[] = {
 };
 
 // ! write func to update inventory (Add/ Remove)
-// ! Pass inventory to story functions
 struct Choice {
   // Choice Presented to the Player
   string line;
@@ -153,7 +153,6 @@ void Introduction(string *inventory) {
   //  minigame_1();
   // print()
 }
-
 
 void Monster_1 (string *inventory) {
   system("clear");

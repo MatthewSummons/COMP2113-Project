@@ -9,13 +9,16 @@ Save_Load.o: Save_Load.cpp Save_Load.hpp
 Story.o: Story.cpp Story.hpp
 			g++ $(FLAGS) -c $< -o $@
 
+Minigames.o: Minigames.cpp Minigames.hpp
+			g++ $(FLAGS) -c $< -o $@
+
 End_Screen.o: End_Screen.cpp End_Screen.hpp
 			g++ $(FLAGS) -c $< -o $@
 
-main.o: main.cpp Title_Screen.hpp Save_Load.hpp Story.hpp End_Screen.hpp
+main.o: main.cpp Title_Screen.hpp Save_Load.hpp Story.hpp Minigames.hpp End_Screen.hpp
 			g++ $(FLAGS) -c $<
 
-GAME: main.o Title_Screen.o Save_Load.o Story.o End_Screen.o
+GAME: main.o Title_Screen.o Save_Load.o Story.o Minigames.o End_Screen.o
 			g++ $(FLAGS)  $^ -o $@
 
 clean:
