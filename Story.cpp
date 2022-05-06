@@ -209,10 +209,11 @@ void Introduction(string *inventory) {
   string message1_1 = "You were killed by the evil spirit!";
   
   Choice c1 = Choice(message1_1);
-  print("Choice (put in number 1 or 2):");
-  c1.choose_option();
   print("1 - Agree");
   print("2 - Disagree");
+  print("Choice (put in number 1 or 2):");
+  c1.choose_option();
+
   if (c1.response == 1){
     ;
   }
@@ -247,10 +248,11 @@ void Monster_1 (string *inventory) {
   // string message2_1 = "Baba Yaga puts you behind THE bars to later eat.";
   
   // Choice c2 = Choice(message2_1);
-  // print("Choice (put in number 1 or 2):");
-  // c2.choose_option();
   // print("1 - Come into Baba Yaga's hut");
   // print("2 - Don't come");
+  // print("Choice (put in number 1 or 2):");
+  // c2.choose_option();
+ 
   // if (c2.response == 1){
   //   ;
   // }
@@ -301,11 +303,11 @@ void Monster_2 (string *inventory) {
   // string message3_1 = "You chose a path of misery.";
   
   // Choice c3 = Choice(message3_1);
-  // print("Choice (put in number 1, 2 or 3):");
-  // c3.choose_option();
   // print("1 - Become a stone");
   // print("2 - Become a zombie");
   // print("3 - Become an animal");
+  // print("Choice (put in number 1, 2 or 3):");
+  // c3.choose_option();
   // if (c3.response == 3){
   //   ;
   // }
@@ -355,11 +357,12 @@ void Monster_3 (string *inventory) {
   // string message4_1 = "You were killed by the dragon!";
   
   // Choice c4 = Choice(message4_1);
-  // print("Choice (put in number 1, 2 or 3):");
-  // c4.choose_option();
   // print("1 - Get burned");
   // print("2 - Get trampled over");
   // print("3 - Get eaten");
+  // print("Choice (put in number 1, 2 or 3):");
+  // c4.choose_option();
+
   // if (c4.response == 3){
   //   ;
   // }
@@ -406,18 +409,19 @@ void Monster_4 (string *inventory) {
   // print("  You will stay here forever. What do you choose?");
   // print("");
 
-  // string message4_1 = "You died of a slow and painful death getting frostbitten.";
+  // string message5_1 = "You died of a slow and painful death getting frostbitten.";
   
-  // Choice c4 = Choice(message4_1);
-  // print("Choice (put in number 1 or 2):");
-  // c4.choose_option();
+  // Choice c5 = Choice(message5_1);
   // print("1 - Die slowly");
   // print("2 - Become The Snow Queen's daughter");
-  // if (c4.response == 2){
+  // print("Choice (put in number 1 or 2):");
+  // c5.choose_option();
+
+  // if (c5.response == 2){
   //   ;
   // }
   // else {
-  //   c4.call_end();
+  //   c5.call_end();
   // }
   
   // print("And then a spirit arose and said:");
@@ -453,14 +457,15 @@ void Final_Battle(string *inventory) {
   print("  Therefore, you have to give them to me.");
   print("");
 
-  string message4_1 = "You brought misery to innocent people.";
+  string message6_1 = "You brought misery to innocent people.";
   
-  Choice c4 = Choice(message4_1);
-  print("Choice (put in number 1 or 2):");
-  c4.choose_option();
+  Choice c6 = Choice(message6_1);
   print("1 - Try to change the mind of the evil spirit");
   print("2 - Give up the crystals to the evil spirit");
-  if (c4.response == 1){
+  print("Choice (put in number 1 or 2):");
+  c6.choose_option();
+
+  if (c6.response == 1){
     ;
   }
   else {
@@ -468,7 +473,7 @@ void Final_Battle(string *inventory) {
     print("The spirit kills the girl once obtaining what he wanted.");
     print("With the power of the crystal flower, he became the most powerful being on earth.");
     print("He did many bad deeds and brought the people misery and destruction.");
-    c4.call_end();
+    c6.call_end();
   }
 
   print("* You deceived me, evil spirit. And I will not give you my crystals, which I have obtained.");
