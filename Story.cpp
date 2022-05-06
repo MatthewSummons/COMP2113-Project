@@ -184,19 +184,22 @@ void Introduction(string *inventory) {
   // print("Once upon a time, there was a little girl. Her name was Hera.");
   // print("She lived with her father, her step-mother and her sister in a small village called Snowland.");
   // print("She also had a loyal husky friend named Lucky that her father has gifted to her.");
+  // system("clear");
   // print("One day, the girl's father died of an unknown illness.");
   // print("He was the most important person for her and she loved him with all her heart.");
   // print("The girl mourned day and night for her father.");
   // print("Suddenly, out of the darkness emerged a creature that called itself the spirit of Frost who called himself Moroz.");
   // print("The Spirit of Frost appears to all the dead.");
   // print("He looked at the girl appearing to be in deep thoughts.");
+  // system("clear");
   // print("Soon the spirit spoke up:");
   // print("");
   // print("* Do you want to bring your father back to life?");
   // print("* Yes, for all I have. But why are you asking me that? It's impossible.");
-  // print("* Girl, what if I said that it is possible?");
+  // print("* What if I said that it is possible?");
   // print("  But everything comes with a price.");
   // print("  I will tell you the way.");
+  // system("clear");
   // print("  You need magic crystals that will revive your father.");
   // print("  Crystals are held by evil Baba Yaga, Koshchei the Immortal, Zmey Gorynych and the Snow Queen.");
   // print("  If you manage to collect these crystals, you can make a magic flower by combing them. ");
@@ -239,7 +242,8 @@ void Monster_1 (string *inventory) {
   // print("Hera saw an old wooden hut before her eyes. Curiosity took over her and she opened the creaky door.");  
   // print("An old woman was found to be sweeping the wooden floor with the broom made out of silver birch and a mortar.");
   // print("Seeing the girl, Baba Yaga was delighted and thought to herself, “Hehe. Today I will not be left hungry.");
-  // print("So she began to prepare the ingredients for her upcoming dinner. Time cannot be wasted.");
+  // system("clear");
+  // print("She began to prepare the ingredients for her upcoming dinner. Time cannot be wasted.");
   // print("She kindled a fire, put water in the cauldron, and spoke to the girl:");
   // print("* Come in, girl, why are you standing halfway there. You must be hungry. I have some food waiting for you.");
   // print("  Why don't you have a taste?");
@@ -268,6 +272,7 @@ void Monster_1 (string *inventory) {
   // print("* For your hunger, there's a baked potato in the oven. Take it.");
   // print("When the girl was about to reach to the stove, Hera understood Baba Yaga's true intention.");
   // print("She was trying to cook her alive by closing the lid of the stove if she will look inside.");
+  // system("clear");
   // print("In an urgent situation, the girl started thinking of the way to get out and decided to go for the trick:");
   // print("* I can't reach the cauldron with potatoes. You have long arms, grandma, help me get it.");
   // print("  Then Baba Yaga decided to look into the stove.");
@@ -295,6 +300,7 @@ void Monster_2 (string *inventory) {
   // print("She already knew what to do when seeing a spooky castle nearby.");
   // print("The girl came into Koshchei's castle. Koschei sitting in his bone throne has long seen her and finally said:");
   // print("* You deserve a punishment for barging into my territory without my permission, little girl.");
+  // system("clear");
   // print("  But I am merciful and fair ruler, therefore I will give you a choice so that you choose your fate yourself.");
   // print("  I haven't been using my magic in a while. It wouldn't be bad to train it on you by turning you into something.");
   // print("  Now, who do you want to become: a stone statue, mindless zombie or an animal? ");
@@ -449,9 +455,11 @@ void Final_Battle(string *inventory) {
   print("Then the spirit appears and smiles slyly. ");
   print("* Well done girl, you were able to get what I could not get at the time. However, you don't know everything. ");
   print("  4 crystals are not enough to revive your father.");
+  system("clear");
   print("  I didn't tell you that I also have a crystal, which is the last component.");
   print("  Without this stone, you won't be able to revive your father.");
   print("  Only the power of five stones will give you what you want.");
+  system("clear");
   print("  But I was not going to give you my crystal, and I will not give it. ");
   print("  And without my crystal, 4 crystals are completely worthless.");
   print("  Therefore, you have to give them to me.");
@@ -481,10 +489,12 @@ void Final_Battle(string *inventory) {
   print("* Don't kill me and don't take my crystals from me. You are kind, helped me all the way through, and saved me from death.");
   print("* I had my agenda all along, and I helped you for a reason.");
   print("  I will become the most powerful being on earth and rule the world forever.");
+  system("clear");
   print("* Why do you need this power if it does not give you human and earthly happiness?");
   print("  Is this what happiness is? Rule the world and enslave the people. You don't even have friends.");
   print("Spirit thought:");
   print("* Yes indeed. I never had friends and no one ever offered me. That's why I became evil.");
+  system("clear");
   print("* Let's be friends then.");
   print("* Are you being serious?");
   print("* Yes.");
@@ -496,5 +506,6 @@ void Final_Battle(string *inventory) {
   print("Hera returns home with a magical flower. Putting the flower in her father's hand, she sees her father open his eyes.");
   print("");
   print("");
+  system("clear");
   print("~THE END~");
 }
