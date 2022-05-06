@@ -24,7 +24,7 @@ The game has 6 major chapters, with four stages in the middle that can appear in
 
 ### 2. Data structures for storing game status
 
-We use structs, STL & vectorsarrays among other miscellaneous data structures to store the game status. The two key datapoints for the gamestatus are the current stage & the inventory which are represented as a string and an array of strings.
+We use structs, STL vectors & arrays among other miscellaneous data structures to store the game status. The two key datapoints for the gamestatus are the current stage & the inventory which are represented as a string and an array of strings.
 
 ### 3. Dynamic memory management
 
