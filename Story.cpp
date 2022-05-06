@@ -222,6 +222,8 @@ void Introduction(string *inventory) {
   //   c1.call_end();
   // }
 
+  minigame_1();
+
 
 
 

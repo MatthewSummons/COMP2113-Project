@@ -66,7 +66,7 @@ char maze3[height][width] = {
 };
 
 // MINI GAME 1
-void mini_game1() 
+void minigame_1() 
 {   
 	while (action != 'Q' || 'q')
 	{	if (posx == 9 || posy == 9){
@@ -117,90 +117,90 @@ void mini_game1()
 	return;
 }
 
-	void playerMove1()
-	{
-		cout << "\nYour move: ";
-		cin >> action;
+void playerMove1()
+{
+	cout << "\nYour move: ";
+	cin >> action;
 
-		int prevposx = posx;
-		int prevposy = posy;
-		char space = ' ';             
+	int prevposx = posx;
+	int prevposy = posy;
+	char space = ' ';             
 
-		switch (action)	
-	{
-		case 'a':
-			if (maze1 [posx][posy-1]!='#' && maze1 [posx][posy-1]!= 'L' && maze1 [posx][posy-1]!= 'I' && maze1 [posx][posy-1]!= 'E') {      // future position is not hash
-				posy--;
+	switch (action)	
+{
+	case 'a':
+		if (maze1 [posx][posy-1]!='#' && maze1 [posx][posy-1]!= 'L' && maze1 [posx][posy-1]!= 'I' && maze1 [posx][posy-1]!= 'E') {      // future position is not hash
+			posy--;
 
-			maze1[prevposx][prevposy] = space;}
-		system("cls");
-		break;
+		maze1[prevposx][prevposy] = space;}
+	system("clear");
+	break;
 
-        case 'A':
-			if (maze1 [posx][posy-1]!='#' && maze1 [posx][posy-1]!= 'L' && maze1 [posx][posy-1]!= 'I' && maze1 [posx][posy-1]!= 'E') {      // future position is not hash
-				posy--;
+			case 'A':
+		if (maze1 [posx][posy-1]!='#' && maze1 [posx][posy-1]!= 'L' && maze1 [posx][posy-1]!= 'I' && maze1 [posx][posy-1]!= 'E') {      // future position is not hash
+			posy--;
 
-			maze1[prevposx][prevposy] = space;}
-		system("cls");
-		break;
+		maze1[prevposx][prevposy] = space;}
+	system("clear");
+	break;
 
-		case 'd':
-			if (maze1 [posx][posy + 1] != '#' && maze1 [posx][posy + 1] != 'L' && maze1 [posx][posy + 1] != 'I' && maze1 [posx][posy + 1] != 'E'){
-				posy++;
+	case 'd':
+		if (maze1 [posx][posy + 1] != '#' && maze1 [posx][posy + 1] != 'L' && maze1 [posx][posy + 1] != 'I' && maze1 [posx][posy + 1] != 'E'){
+			posy++;
 
-			maze1[prevposx][prevposy] = space;}
-		system("cls");
-		break;
+		maze1[prevposx][prevposy] = space;}
+	system("clear");
+	break;
 
-        case 'D':
-			if (maze1 [posx][posy + 1] != '#' && maze1 [posx][posy + 1] != 'L' && maze1 [posx][posy + 1] != 'I' && maze1 [posx][posy + 1] != 'E'){
-				posy++;
+			case 'D':
+		if (maze1 [posx][posy + 1] != '#' && maze1 [posx][posy + 1] != 'L' && maze1 [posx][posy + 1] != 'I' && maze1 [posx][posy + 1] != 'E'){
+			posy++;
 
-			maze1[prevposx][prevposy] = space;}
-		system("cls");
-		break;
+		maze1[prevposx][prevposy] = space;}
+	system("clear");
+	break;
 
-		case 's':
-			if (maze1 [posx + 1][posy] != '#' && maze1 [posx + 1][posy] != 'L' && maze1 [posx + 1][posy] != 'I' && maze1 [posx + 1][posy] != 'E'){
-				posx++;
+	case 's':
+		if (maze1 [posx + 1][posy] != '#' && maze1 [posx + 1][posy] != 'L' && maze1 [posx + 1][posy] != 'I' && maze1 [posx + 1][posy] != 'E'){
+			posx++;
 
-			maze1[prevposx][prevposy] = space;}
-		system("cls");                               // system clear screen to redraw maze
-		break;
-		
-		case 'S':
-			if (maze1 [posx + 1][posy] != '#' && maze1 [posx + 1][posy] != 'L' && maze1 [posx + 1][posy] != 'I' && maze1 [posx + 1][posy] != 'E'){
-				posx++;
+		maze1[prevposx][prevposy] = space;}
+	system("clear");                               // system clear screen to redraw maze
+	break;
+	
+	case 'S':
+		if (maze1 [posx + 1][posy] != '#' && maze1 [posx + 1][posy] != 'L' && maze1 [posx + 1][posy] != 'I' && maze1 [posx + 1][posy] != 'E'){
+			posx++;
 
-			maze1[prevposx][prevposy] = space;}
-		system("cls");                               
-		break;
+		maze1[prevposx][prevposy] = space;}
+	system("clear");                               
+	break;
 
-		case 'w':
-			if (maze1 [posx - 1][posy] != '#' && maze1 [posx - 1][posy] != 'L' && maze1 [posx - 1][posy] != 'I' && maze1 [posx - 1][posy] != 'E'){
-				posx--;
+	case 'w':
+		if (maze1 [posx - 1][posy] != '#' && maze1 [posx - 1][posy] != 'L' && maze1 [posx - 1][posy] != 'I' && maze1 [posx - 1][posy] != 'E'){
+			posx--;
 
-			maze1[prevposx][prevposy] = space;}
-		system("cls");
-		break;
-		
-		case 'W':
-			if (maze1 [posx - 1][posy] != '#' && maze1 [posx - 1][posy] != 'L' && maze1 [posx - 1][posy] != 'I' && maze1 [posx - 1][posy] != 'E'){
-				posx--;
+		maze1[prevposx][prevposy] = space;}
+	system("clear");
+	break;
+	
+	case 'W':
+		if (maze1 [posx - 1][posy] != '#' && maze1 [posx - 1][posy] != 'L' && maze1 [posx - 1][posy] != 'I' && maze1 [posx - 1][posy] != 'E'){
+			posx--;
 
-			maze1[prevposx][prevposy] = space;}
-		system("cls");
-		break;
+		maze1[prevposx][prevposy] = space;}
+	system("clear");
+	break;
 
-		default :
-		cout << "Incorrect action... try a valid key" << endl;
-		break;
-		
-		}
+	default :
+	cout << "Incorrect action... try a valid key" << endl;
+	break;
+	
+	}
 }
 
 // MINI GAME 2
-void mini_game2() 
+void minigame_2() 
 {
 
 	while (action != 'Q' || 'q')
@@ -260,89 +260,89 @@ void mini_game2()
 	return;
 }
 
-	void playerMove2()
-	{
-		cout << "\nYour move: ";
-		cin >> action;
+void playerMove2()
+{
+	cout << "\nYour move: ";
+	cin >> action;
 
-		int prevposx = posx;
-		int prevposy = posy;
-		char space = ' ';                  // ASCII for space
+	int prevposx = posx;
+	int prevposy = posy;
+	char space = ' ';                  // ASCII for space
 
-		switch (action)	
-	{
-		case 'a':
-			if (maze2 [posx][posy-1]!='#' && maze2 [posx][posy-1]!= 'L' && maze2 [posx][posy-1]!= 'I' && maze2 [posx][posy-1]!= 'E' && maze2 [posx][posy-1]!= 'V') {      // future position is not hash
-				posy--;
+	switch (action)	
+{
+	case 'a':
+		if (maze2 [posx][posy-1]!='#' && maze2 [posx][posy-1]!= 'L' && maze2 [posx][posy-1]!= 'I' && maze2 [posx][posy-1]!= 'E' && maze2 [posx][posy-1]!= 'V') {      // future position is not hash
+			posy--;
 
-			maze2[prevposx][prevposy] = space;}
-		system("cls");
-		break;
+		maze2[prevposx][prevposy] = space;}
+	system("clear");
+	break;
 
-        case 'A':
-			if (maze2 [posx][posy-1]!='#' && maze2 [posx][posy-1]!= 'L' && maze2 [posx][posy-1]!= 'I' && maze2 [posx][posy-1]!= 'E' && maze2 [posx][posy-1]!= 'V') {      // future position is not hash
-				posy--;
+			case 'A':
+		if (maze2 [posx][posy-1]!='#' && maze2 [posx][posy-1]!= 'L' && maze2 [posx][posy-1]!= 'I' && maze2 [posx][posy-1]!= 'E' && maze2 [posx][posy-1]!= 'V') {      // future position is not hash
+			posy--;
 
-			maze2[prevposx][prevposy] = space;}
-		system("cls");
-		break;
+		maze2[prevposx][prevposy] = space;}
+	system("clear");
+	break;
 
-		case 'd':
-			if (maze2 [posx][posy + 1] != '#' && maze2 [posx][posy + 1] != 'L' && maze2 [posx][posy + 1] != 'I' && maze2 [posx][posy + 1] != 'E' && maze2 [posx][posy + 1] != 'V'){
-				posy++;
+	case 'd':
+		if (maze2 [posx][posy + 1] != '#' && maze2 [posx][posy + 1] != 'L' && maze2 [posx][posy + 1] != 'I' && maze2 [posx][posy + 1] != 'E' && maze2 [posx][posy + 1] != 'V'){
+			posy++;
 
-			maze2[prevposx][prevposy] = space;}
-		system("cls");
-		break;
+		maze2[prevposx][prevposy] = space;}
+	system("clear");
+	break;
 
-        case 'D':
-			if (maze2 [posx][posy + 1] != '#' && maze2 [posx][posy + 1] != 'L' && maze2 [posx][posy + 1] != 'I' && maze2 [posx][posy + 1] != 'E' && maze2 [posx][posy + 1] != 'V'){
-				posy++;
+			case 'D':
+		if (maze2 [posx][posy + 1] != '#' && maze2 [posx][posy + 1] != 'L' && maze2 [posx][posy + 1] != 'I' && maze2 [posx][posy + 1] != 'E' && maze2 [posx][posy + 1] != 'V'){
+			posy++;
 
-			maze2[prevposx][prevposy] = space;}
-		system("cls");
-		break;
+		maze2[prevposx][prevposy] = space;}
+	system("clear");
+	break;
 
-		case 's':
-			if (maze2 [posx + 1][posy] != '#' && maze2 [posx + 1][posy] != 'L' && maze2 [posx + 1][posy] != 'I' && maze2 [posx + 1][posy] != 'E' && maze2 [posx + 1][posy] != 'V'){
-				posx++;
+	case 's':
+		if (maze2 [posx + 1][posy] != '#' && maze2 [posx + 1][posy] != 'L' && maze2 [posx + 1][posy] != 'I' && maze2 [posx + 1][posy] != 'E' && maze2 [posx + 1][posy] != 'V'){
+			posx++;
 
-			maze2[prevposx][prevposy] = space;}
-		system("cls");                               // system clear screen to redraw maze
-		break;
-		
-		case 'S':
-			if (maze2 [posx + 1][posy] != '#' && maze2 [posx + 1][posy] != 'L' && maze2 [posx + 1][posy] != 'I' && maze2 [posx + 1][posy] != 'E' && maze2 [posx + 1][posy] != 'V'){
-				posx++;
+		maze2[prevposx][prevposy] = space;}
+	system("clear");                               // system clear screen to redraw maze
+	break;
+	
+	case 'S':
+		if (maze2 [posx + 1][posy] != '#' && maze2 [posx + 1][posy] != 'L' && maze2 [posx + 1][posy] != 'I' && maze2 [posx + 1][posy] != 'E' && maze2 [posx + 1][posy] != 'V'){
+			posx++;
 
-			maze2[prevposx][prevposy] = space;}
-		system("cls");                               
-		break;
+		maze2[prevposx][prevposy] = space;}
+	system("clear");                               
+	break;
 
-		case 'w':
-			if (maze2 [posx - 1][posy] != '#' && maze2 [posx - 1][posy] != 'L' && maze2 [posx - 1][posy] != 'I' && maze2 [posx - 1][posy] != 'E' && maze2 [posx - 1][posy] != 'V'){
-				posx--;
+	case 'w':
+		if (maze2 [posx - 1][posy] != '#' && maze2 [posx - 1][posy] != 'L' && maze2 [posx - 1][posy] != 'I' && maze2 [posx - 1][posy] != 'E' && maze2 [posx - 1][posy] != 'V'){
+			posx--;
 
-			maze2[prevposx][prevposy] = space;}
-		system("cls");
-		break;
-		
-		case 'W':
-			if (maze2 [posx - 1][posy] != '#' && maze2 [posx - 1][posy] != 'L' && maze2 [posx - 1][posy] != 'I' && maze2 [posx - 1][posy] != 'E' && maze2 [posx - 1][posy] != 'V'){
-				posx--;
+		maze2[prevposx][prevposy] = space;}
+	system("clear");
+	break;
+	
+	case 'W':
+		if (maze2 [posx - 1][posy] != '#' && maze2 [posx - 1][posy] != 'L' && maze2 [posx - 1][posy] != 'I' && maze2 [posx - 1][posy] != 'E' && maze2 [posx - 1][posy] != 'V'){
+			posx--;
 
-			maze2[prevposx][prevposy] = space;}
-		system("cls");
-		break;
+		maze2[prevposx][prevposy] = space;}
+	system("clear");
+	break;
 
-		default :
-		cout << "Incorrect action... try a valid key" << endl;
-		break;
-		}
+	default :
+	cout << "Incorrect action... try a valid key" << endl;
+	break;
+	}
 }
 
 // MINI GAME 3
-void mini_game3() 
+void minigame_3() 
 {
 
 	while (action != 'Q' || 'q')
@@ -410,83 +410,83 @@ void mini_game3()
 	return;
 }
 
-	void playerMove3()
-	{
-		cout << "\nYour move: ";
-		cin >> action;
+void playerMove3()
+{
+	cout << "\nYour move: ";
+	cin >> action;
 
-		int prevposx = posx;
-		int prevposy = posy;
-		char space = ' ';                  // ASCII for space
+	int prevposx = posx;
+	int prevposy = posy;
+	char space = ' ';                  // ASCII for space
 
-		switch (action)	
-	{
-		case 'a':
-			if (maze3 [posx][posy - 1] != '#' && maze3 [posx][posy - 1] != 'S' && maze3 [posx][posy - 1] != 'P' && maze3 [posx][posy - 1] != 'I' && maze3 [posx][posy - 1] != 'R' && maze3 [posx][posy - 1] != 'T') {      // future position is not hash
-				posy--;
-	
-			maze3[prevposx][prevposy] = space;}
-		system("cls");
-		break;
+	switch (action)	
+{
+	case 'a':
+		if (maze3 [posx][posy - 1] != '#' && maze3 [posx][posy - 1] != 'S' && maze3 [posx][posy - 1] != 'P' && maze3 [posx][posy - 1] != 'I' && maze3 [posx][posy - 1] != 'R' && maze3 [posx][posy - 1] != 'T') {      // future position is not hash
+			posy--;
 
-    case 'A':
-			if (maze3 [posx][posy - 1] != '#' && maze3 [posx][posy - 1] != 'S' && maze3 [posx][posy - 1] != 'P' && maze3 [posx][posy - 1] != 'I' && maze3 [posx][posy - 1] != 'R' && maze3 [posx][posy - 1] != 'T') {      // future position is not hash
-				posy--;
-	
-			maze3[prevposx][prevposy] = space;}
-		system("cls");
-		break;
+		maze3[prevposx][prevposy] = space;}
+	system("clear");
+	break;
 
-		case 'd':
-			if (maze3 [posx][posy + 1] != '#' && maze3 [posx][posy + 1] != 'S' && maze3 [posx][posy + 1] != 'P' && maze3 [posx][posy + 1] != 'I' && maze3 [posx][posy + 1] != 'R' && maze3 [posx][posy + 1] != 'T'){
-				posy++;
-	
-			maze3[prevposx][prevposy] = space;}
-		system("cls");
-		break;
+	case 'A':
+		if (maze3 [posx][posy - 1] != '#' && maze3 [posx][posy - 1] != 'S' && maze3 [posx][posy - 1] != 'P' && maze3 [posx][posy - 1] != 'I' && maze3 [posx][posy - 1] != 'R' && maze3 [posx][posy - 1] != 'T') {      // future position is not hash
+			posy--;
 
-    case 'D':
-			if (maze3 [posx][posy + 1] != '#' && maze3 [posx][posy + 1] != 'S' && maze3 [posx][posy + 1] != 'P' && maze3 [posx][posy + 1] != 'I' && maze3 [posx][posy + 1] != 'R' && maze3 [posx][posy + 1] != 'T'){
-				posy++;
-	
-			maze3[prevposx][prevposy] = space;}
-		system("cls");
-		break;
+		maze3[prevposx][prevposy] = space;}
+	system("clear");
+	break;
 
-		case 's':
-			if (maze3 [posx + 1][posy] != '#' && maze3 [posx + 1][posy] != 'S' && maze3 [posx + 1][posy] != 'P' && maze3 [posx + 1][posy] != 'I' && maze3 [posx + 1][posy] != 'R' && maze3 [posx + 1][posy] != 'T'){
-				posx++;
+	case 'd':
+		if (maze3 [posx][posy + 1] != '#' && maze3 [posx][posy + 1] != 'S' && maze3 [posx][posy + 1] != 'P' && maze3 [posx][posy + 1] != 'I' && maze3 [posx][posy + 1] != 'R' && maze3 [posx][posy + 1] != 'T'){
+			posy++;
 
-			maze3[prevposx][prevposy] = space;}
-		system("cls");                               // system clear screen to redraw maze
-		break;
+		maze3[prevposx][prevposy] = space;}
+	system("clear");
+	break;
 
-    case 'S':
-			if (maze3 [posx + 1][posy] != '#' && maze3 [posx + 1][posy] != 'S' && maze3 [posx + 1][posy] != 'P' && maze3 [posx + 1][posy] != 'I' && maze3 [posx + 1][posy] != 'R' && maze3 [posx + 1][posy] != 'T'){
-				posx++;
+	case 'D':
+		if (maze3 [posx][posy + 1] != '#' && maze3 [posx][posy + 1] != 'S' && maze3 [posx][posy + 1] != 'P' && maze3 [posx][posy + 1] != 'I' && maze3 [posx][posy + 1] != 'R' && maze3 [posx][posy + 1] != 'T'){
+			posy++;
 
-			maze3[prevposx][prevposy] = space;}
-		system("cls");                               // system clear screen to redraw maze
-		break;
+		maze3[prevposx][prevposy] = space;}
+	system("clear");
+	break;
 
-		case 'w':
-			if (maze3 [posx - 1][posy] != '#' && maze3 [posx - 1][posy] != 'S' && maze3 [posx - 1][posy] != 'P' && maze3 [posx - 1][posy] != 'I' && maze3 [posx - 1][posy] != 'R' && maze3 [posx - 1][posy] != 'T'){
-				posx--;
+	case 's':
+		if (maze3 [posx + 1][posy] != '#' && maze3 [posx + 1][posy] != 'S' && maze3 [posx + 1][posy] != 'P' && maze3 [posx + 1][posy] != 'I' && maze3 [posx + 1][posy] != 'R' && maze3 [posx + 1][posy] != 'T'){
+			posx++;
 
-			maze3[prevposx][prevposy] = space;}
-		system("cls");
-		break;
+		maze3[prevposx][prevposy] = space;}
+	system("clear");                               // system clear screen to redraw maze
+	break;
 
-    case 'W':
-			if (maze3 [posx - 1][posy] != '#' && maze3 [posx - 1][posy] != 'S' && maze3 [posx - 1][posy] != 'P' && maze3 [posx - 1][posy] != 'I' && maze3 [posx - 1][posy] != 'R' && maze3 [posx - 1][posy] != 'T'){
-				posx--;
+	case 'S':
+		if (maze3 [posx + 1][posy] != '#' && maze3 [posx + 1][posy] != 'S' && maze3 [posx + 1][posy] != 'P' && maze3 [posx + 1][posy] != 'I' && maze3 [posx + 1][posy] != 'R' && maze3 [posx + 1][posy] != 'T'){
+			posx++;
 
-			maze3[prevposx][prevposy] = space;}
-		system("cls");
-		break;
+		maze3[prevposx][prevposy] = space;}
+	system("clear");                               // system clear screen to redraw maze
+	break;
 
-		default :
-		cout << "Incorrect action... try a valid key" << endl;
-		break;
-		}
+	case 'w':
+		if (maze3 [posx - 1][posy] != '#' && maze3 [posx - 1][posy] != 'S' && maze3 [posx - 1][posy] != 'P' && maze3 [posx - 1][posy] != 'I' && maze3 [posx - 1][posy] != 'R' && maze3 [posx - 1][posy] != 'T'){
+			posx--;
+
+		maze3[prevposx][prevposy] = space;}
+	system("clear");
+	break;
+
+	case 'W':
+		if (maze3 [posx - 1][posy] != '#' && maze3 [posx - 1][posy] != 'S' && maze3 [posx - 1][posy] != 'P' && maze3 [posx - 1][posy] != 'I' && maze3 [posx - 1][posy] != 'R' && maze3 [posx - 1][posy] != 'T'){
+			posx--;
+
+		maze3[prevposx][prevposy] = space;}
+	system("clear");
+	break;
+
+	default :
+	cout << "Incorrect action... try a valid key" << endl;
+	break;
+	}
 }
