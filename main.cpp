@@ -20,6 +20,8 @@ int main() {
   // Update the stage and inventory by loading save and creating a new one in none exists
   string stage = "";
   string *inventory = new string[inventory_length];
+  // Hold the seed for the game, undecided/empty
+  int seed [4] = {0};
   
   // Initialize Inventory to be empty
   for (int i = 0; i < inventory_length; i++) {
@@ -27,15 +29,13 @@ int main() {
   }
   
   // Load data from save if continuing previous game, otherwise create a new save
-  Start_Save_Load(game_mode, stage, inventory);
+  Start_Save_Load(game_mode, stage, inventory, seed);
 
   // Play corresponding stage
   while (stage != "Final Battle") {
-    Play_Stage(stage, inventory);
-    Update_Stage(stage);
-    cout << "The stage is " << stage << endl;
+    Play_Stage(stage, inventory, seed);
   }
   
   // Play the Final Stage
-  Play_Stage(stage, inventory);
+  Play_Stage(stage, inventory, seed);
 }

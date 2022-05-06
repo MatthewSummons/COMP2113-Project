@@ -40,5 +40,5 @@ void End_Screen (string end_line) {
   print(end_line, 100);
 
   // Consider allowing player to continue from last save
-  exit(1);
+  exit(0);
 }

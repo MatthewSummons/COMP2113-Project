@@ -5,12 +5,12 @@
 void print(std::string line, int delay = 35, bool isEndLine = true);
 
 // Call the apprpriate stage function
-void Play_Stage(std::string &stage, std::string *inventory);
+void Play_Stage(std::string &stage, std::string *inventory, int *seed);
 
 // Ask to save after chapter concluded
-void Ask_Save(const std::string stage, std::string *inventory);
+void Ask_Save(const std::string stage, std::string *inventory, int *seed);
 // Update Stage after completing a stage
-void Update_Stage(std::string &stage);
+void Update_Stage(std::string &stage, int *seed);
 
 // Add/Remove items from inventory
 void add_item(std::string item, std::string *inventory);

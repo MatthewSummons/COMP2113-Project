@@ -147,7 +147,7 @@ int ask_game_mode(bool isSaved) {
   // Easter Egg
   if (user_option == 69) {
     delayed_print("nice.");
-    exit(1);
+    exit(0);
   }
 
   // If user wants to play a new game when a save already exists, confirm their choice
@@ -185,5 +185,5 @@ int ask_game_mode(bool isSaved) {
 void quit_game() {
   delayed_print("Come back next time!");
   system("clear");
-  exit(1);
+  exit(0);
 }

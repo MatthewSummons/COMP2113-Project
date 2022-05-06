@@ -12,16 +12,6 @@ using namespace std;
 #include "Minigames.hpp"    // For Minigames
 #include "End_Screen.hpp"   // For End Screen
 
-// Originally in SaveLoad.cpp
-std::string stages_alias[] = {
-  "Introduction",
-  "Monster 1",
-  "Monster 2",
-  "Monster 3",
-  "Monster 4",
-  "Final Battle"
-};
-
 struct Choice {
   // End Screen line if incorrect choice made
   string end_screen_msg;
@@ -94,7 +84,7 @@ void remove_item(string item, string *inventory) {
 
 
 // Select stage based on load from save file; If new game, play from Introduction
-void Play_Stage(string &stage, string *inventory) {
+void Play_Stage(string &stage, string *inventory, int *seed) {
   if (stage == "Introduction")
     Introduction(inventory);
   else if (stage == "Monster 1")
@@ -116,8 +106,11 @@ void Play_Stage(string &stage, string *inventory) {
     exit(1);
   }
 
+  // Move to the next stage
+  Update_Stage(stage, seed);
+
   // Ask to save each time
-  Ask_Save(stage, inventory);
+  Ask_Save(stage, inventory, seed);
 
   // Ask if the player would like to continue playing
   print("Would you like to continue playing? [Y/n]");
@@ -127,12 +120,12 @@ void Play_Stage(string &stage, string *inventory) {
   // Quit out of game
   if ((response == "n") || (response == "N")) {
     print("Thanks for playing! Come back around again!", 50);
-    exit(1);
+    exit(0);
   }
 }
 
-// Ask to save before continuing chpater, save if player wants to
-void Ask_Save(const string stage, string *inventory) {
+// Ask to save before continuing chapter, save if player wants to
+void Ask_Save(const string stage, string *inventory, int *seed) {
   // Lower the text
   for (int i = 0; i < 3; i++) {
     cout << endl;
@@ -145,18 +138,38 @@ void Ask_Save(const string stage, string *inventory) {
 
   // Save if the players want to save
   if (response == "Y" || response == "y") {
-    Save(stage, inventory);
+    Save(stage, inventory, seed);
   }
 }
 
+// Update the stage to the next stage according the seed used in the playthrough
 // After completing a stage, move to the next stage
-void Update_Stage(string &stage) {
-  // 5 Stages
-  string next_stage = "Corrupted";
-  for (int i = 0; i < 5; i++) {
-    if (stage == stages_alias[i])
-      next_stage = stages_alias[i + 1];
+void Update_Stage(string &stage, int *seed) {
+  string next_stage = "Corrupted", Monster = "Monster ";
+
+  if (stage == "Introduction")
+    next_stage = Monster + to_string(seed[0]);
+
+  // If last monster stage (stage at index 3), move to the finale
+  else if (stage == (Monster + to_string(seed[3])))
+    next_stage = "Final Battle";
+
+  // Monster X stage (Where the stages are in random order) 
+  else {
+    // Identify index in playthrough
+    string last_char = string(1, stage.back()); // Get the monster number from the string
+    int monster_num = stoi(last_char), index = -1;
+    
+    for (unsigned i = 0; i < 4; i++) {
+      if (monster_num == seed[i])
+        index = i;
+    }
+
+    // Move to the next index
+    next_stage = Monster + to_string(seed[index + 1]);
   }
+
+  // Update the stage
   stage = next_stage;
 }
 
@@ -207,7 +220,7 @@ void Introduction(string *inventory) {
     c1.call_end();
   }
 
-  minigame_1();
+  // minigame_1();
 
   // R"()" for raw strings.
   // print()
@@ -220,210 +233,211 @@ void Monster_1 (string *inventory) {
   // remove_item("Stick", inventory);
   
   print("Hut of the Baba Yaga");
-  print("");
-  print("As promised, the spirit accompanied the girl to the land of Baba Yaga and disappeared once reaching the destination.");
-  print("Hera saw an old wooden hut before her eyes. Curiosity took over her and she opened the creaky door.");  
-  print("An old woman was found to be sweeping the wooden floor with the broom made out of silver birch and a mortar.");
-  print("Seeing the girl, Baba Yaga was delighted and thought to herself, “Hehe. Today I will not be left hungry.");
-  print("So she began to prepare the ingredients for her upcoming dinner. Time cannot be wasted.");
-  print("She kindled a fire, put water in the cauldron, and spoke to the girl:");
-  print("* Come in, girl, why are you standing halfway there. You must be hungry. I have some food waiting for you.");
-  print("  Why don't you have a taste?");
-  print("");
+  // print("");
+  // print("As promised, the spirit accompanied the girl to the land of Baba Yaga and disappeared once reaching the destination.");
+  // print("Hera saw an old wooden hut before her eyes. Curiosity took over her and she opened the creaky door.");  
+  // print("An old woman was found to be sweeping the wooden floor with the broom made out of silver birch and a mortar.");
+  // print("Seeing the girl, Baba Yaga was delighted and thought to herself, “Hehe. Today I will not be left hungry.");
+  // print("So she began to prepare the ingredients for her upcoming dinner. Time cannot be wasted.");
+  // print("She kindled a fire, put water in the cauldron, and spoke to the girl:");
+  // print("* Come in, girl, why are you standing halfway there. You must be hungry. I have some food waiting for you.");
+  // print("  Why don't you have a taste?");
+  // print("");
 
-  string message2_1 = "Baba Yaga puts you behind THE bars to later eat.";
+  // string message2_1 = "Baba Yaga puts you behind THE bars to later eat.";
   
-  Choice c2 = Choice(message2_1);
-  print("Choice (put in number 1 or 2):");
-  c2.choose_option();
-  print("1 - Come into Baba Yaga's hut");
-  print("2 - Don't come");
-  if (c2.response == 1){
-    ;
-  }
-  else {
-    c2.call_end();
-  }
+  // Choice c2 = Choice(message2_1);
+  // print("Choice (put in number 1 or 2):");
+  // c2.choose_option();
+  // print("1 - Come into Baba Yaga's hut");
+  // print("2 - Don't come");
+  // if (c2.response == 1){
+  //   ;
+  // }
+  // else {
+  //   c2.call_end();
+  // }
 
   
-  print("* Would it be really okay? I don't want to inconvenience the person I first met.");
-  print("* You are asking? Come here and can call me grandma.");
-  print("* Thank you, grandma.");
-  print("When the girl approached Baba Yaga, pointed to the dusty stove next to her:");
-  print("* For your hunger, there's a baked potato in the oven. Take it.");
-  print("When the girl was about to reach to the stove, Hera understood Baba Yaga's true intention.");
-  print("She was trying to cook her alive by closing the lid of the stove if she will look inside.");
-  print("In an urgent situation, the girl started thinking of the way to get out and decided to go for the trick:");
-  print("* I can't reach the cauldron with potatoes. You have long arms, grandma, help me get it.");
-  print("  Then Baba Yaga decided to look into the stove.");
-  print("  At that moment, the girl pushed Baba Yaga into the stove with a kindled fire and closed the lid of the stove.");
-  print("  Baba Yaga began to scream for help. Then the girl said:");
-  print("* I'll help you if you give me your precious crystal.");
-  print("  I don't think that it is more precious than your life. Think quick.");
-  print("Baba Yaga had no choice but to agree to give her crystal.");
-  print("");
-  print("(FIRST CRYSTAL PIECE OBTAINED)");
+  // print("* Would it be really okay? I don't want to inconvenience the person I first met.");
+  // print("* You are asking? Come here and can call me grandma.");
+  // print("* Thank you, grandma.");
+  // print("When the girl approached Baba Yaga, pointed to the dusty stove next to her:");
+  // print("* For your hunger, there's a baked potato in the oven. Take it.");
+  // print("When the girl was about to reach to the stove, Hera understood Baba Yaga's true intention.");
+  // print("She was trying to cook her alive by closing the lid of the stove if she will look inside.");
+  // print("In an urgent situation, the girl started thinking of the way to get out and decided to go for the trick:");
+  // print("* I can't reach the cauldron with potatoes. You have long arms, grandma, help me get it.");
+  // print("  Then Baba Yaga decided to look into the stove.");
+  // print("  At that moment, the girl pushed Baba Yaga into the stove with a kindled fire and closed the lid of the stove.");
+  // print("  Baba Yaga began to scream for help. Then the girl said:");
+  // print("* I'll help you if you give me your precious crystal.");
+  // print("  I don't think that it is more precious than your life. Think quick.");
+  // print("Baba Yaga had no choice but to agree to give her crystal.");
+  // print("");
+  // print("(FIRST CRYSTAL PIECE OBTAINED)");
 
-  // INVENTORY UPDATE
-  add_item("Blue crystal", inventory);
+  // // INVENTORY UPDATE
+  // add_item("Blue crystal", inventory);
 
-  // RANDOM CHOICE OF THE NEXT EVENT
+  // // RANDOM CHOICE OF THE NEXT EVENT
 
-  // minigame_1();
+  // // minigame_1();
 }
 
 void Monster_2 (string *inventory) {
   system("clear");
   print("Koshchei the Immortal");
-  print("");
-  print("With the guidance of the spirit, the girl went to the lifeless lands of Koshchei the immortal.");
-  print("She already knew what to do when seeing a spooky castle nearby.");
-  print("The girl came into Koshchei's castle. Koschei sitting in his bone throne has long seen her and finally said:");
-  print("* You deserve a punishment for barging into my territory without my permission, little girl.");
-  print("  But I am merciful and fair ruler, therefore I will give you a choice so that you choose your fate yourself.");
-  print("  I haven't been using my magic in a while. It wouldn't be bad to train it on you by turning you into something.");
-  print("  Now, who do you want to become: a stone statue, mindless zombie or an animal? ");
-  print("");
+  // print("");
+  // print("With the guidance of the spirit, the girl went to the lifeless lands of Koshchei the immortal.");
+  // print("She already knew what to do when seeing a spooky castle nearby.");
+  // print("The girl came into Koshchei's castle. Koschei sitting in his bone throne has long seen her and finally said:");
+  // print("* You deserve a punishment for barging into my territory without my permission, little girl.");
+  // print("  But I am merciful and fair ruler, therefore I will give you a choice so that you choose your fate yourself.");
+  // print("  I haven't been using my magic in a while. It wouldn't be bad to train it on you by turning you into something.");
+  // print("  Now, who do you want to become: a stone statue, mindless zombie or an animal? ");
+  // print("");
 
-  string message3_1 = "You chose a path of misery.";
+  // string message3_1 = "You chose a path of misery.";
   
-  Choice c3 = Choice(message3_1);
-  print("Choice (put in number 1, 2 or 3):");
-  c3.choose_option();
-  print("1 - Become a stone");
-  print("2 - Become a zombie");
-  print("3 - Become an animal");
-  if (c3.response == 3){
-    ;
-  }
-  else if (c3.response == 1) {
-    print("Hera soon became a stone statue and fell over breaking into pieces.");
-    print("There is no way back to turn her into a living person again.");
-    c3.call_end();
-  }
-  else if (c3.response == 2) {
-    print("Hera turned into one of Koschei's obedient followers forever. She lost her mind and will to him.");
-    c3.call_end();
-  }
+  // Choice c3 = Choice(message3_1);
+  // print("Choice (put in number 1, 2 or 3):");
+  // c3.choose_option();
+  // print("1 - Become a stone");
+  // print("2 - Become a zombie");
+  // print("3 - Become an animal");
+  // if (c3.response == 3){
+  //   ;
+  // }
+  // else if (c3.response == 1) {
+  //   print("Hera soon became a stone statue and fell over breaking into pieces.");
+  //   print("There is no way back to turn her into a living person again.");
+  //   c3.call_end();
+  // }
+  // else if (c3.response == 2) {
+  //   print("Hera turned into one of Koschei's obedient followers forever. She lost her mind and will to him.");
+  //   c3.call_end();
+  // }
 
   
-  print("* My choice is to become an animal.");
-  print("That doesn't seem to be a bad choice. But I am a bit afraid and uncertain of it.");
-  print("  I want to understand how you do it. As my last wish, show me first doing it on yourself.");
-  print("* You are causing me trouble, child, but I'm still a merciful king. I will fulfil your last wish.");
-  print("Koschei turns into a cat. Lucky grabs the cat and puts it in his mouth, and brings it to Hera. ");
-  print("Koschei pleaded:");
-  print("* Do not let your dog eat me. I will give you my most precious possession: a mana crystal.");
-  print("");
-  print("(CRYSTAL PIECE OBTAINED)");
-  // INVENTORY UPDATE
-  add_item("Red crystal", inventory);
-  // RANDOM CHOICE OF THE NEXT EVENT
+  // print("* My choice is to become an animal.");
+  // print("That doesn't seem to be a bad choice. But I am a bit afraid and uncertain of it.");
+  // print("  I want to understand how you do it. As my last wish, show me first doing it on yourself.");
+  // print("* You are causing me trouble, child, but I'm still a merciful king. I will fulfil your last wish.");
+  // print("Koschei turns into a cat. Lucky grabs the cat and puts it in his mouth, and brings it to Hera. ");
+  // print("Koschei pleaded:");
+  // print("* Do not let your dog eat me. I will give you my most precious possession: a mana crystal.");
+  // print("");
+  // print("(CRYSTAL PIECE OBTAINED)");
+  // // INVENTORY UPDATE
+  // add_item("Red crystal", inventory);
+  // // RANDOM CHOICE OF THE NEXT EVENT
 
-  // minigame_2();
+  // // minigame_2();
 }
 
 void Monster_3 (string *inventory) {
   system("clear");
   print("Three-headed dragon Gorynych");
-  print("");
-  print("The girl next prepared to take an adventure to the land of the three-headed dragon Gorynych. Moroz led the way for her.");
-  print("Once arriving to the place, the three-headed dragon smelled the girl's scent and found her right after.");
-  print("First head mightily spoke:");
-  print("* We're not going to let you live. You are our prisoner. We will burn you.");
-  print("Second head disappointed:");
-  print("* Weren't we going to trample her over with our weight? It's fun.");
-  print("Third head angrily:");
-  print("* I am hungry. Let's eat her!");
-  print("First head:");
-  print("* Okay, let's not argue. Let the girl choose how she wants to die.");
-  print("");
+  // print("");
+  // print("The girl next prepared to take an adventure to the land of the three-headed dragon Gorynych. Moroz led the way for her.");
+  // print("Once arriving to the place, the three-headed dragon smelled the girl's scent and found her right after.");
+  // print("First head mightily spoke:");
+  // print("* We're not going to let you live. You are our prisoner. We will burn you.");
+  // print("Second head disappointed:");
+  // print("* Weren't we going to trample her over with our weight? It's fun.");
+  // print("Third head angrily:");
+  // print("* I am hungry. Let's eat her!");
+  // print("First head:");
+  // print("* Okay, let's not argue. Let the girl choose how she wants to die.");
+  // print("");
 
-  string message4_1 = "You were killed by the dragon!";
+  // string message4_1 = "You were killed by the dragon!";
   
-  Choice c4 = Choice(message4_1);
-  print("Choice (put in number 1, 2 or 3):");
-  c4.choose_option();
-  print("1 - Get burned");
-  print("2 - Get trampled over");
-  print("3 - Get eaten");
-  if (c4.response == 3){
-    ;
-  }
-  else if (c4.response == 1) {
-    print("Hera gets burned by the dragon in an instant.");
-    c4.call_end();
-  }
-  else if (c4.response == 2) {
-    print("Without any hesitation, Hera gets trampled over by the dragon.");
-    c4.call_end();
-  }
+  // Choice c4 = Choice(message4_1);
+  // print("Choice (put in number 1, 2 or 3):");
+  // c4.choose_option();
+  // print("1 - Get burned");
+  // print("2 - Get trampled over");
+  // print("3 - Get eaten");
+  // if (c4.response == 3){
+  //   ;
+  // }
+  // else if (c4.response == 1) {
+  //   print("Hera gets burned by the dragon in an instant.");
+  //   c4.call_end();
+  // }
+  // else if (c4.response == 2) {
+  //   print("Without any hesitation, Hera gets trampled over by the dragon.");
+  //   c4.call_end();
+  // }
   
-  print("* Fine, I'll choose to be eaten. But how are you going to eat me at the same time since there are three of you?");
-  print("  And I want a quick and painless death. That is why I pick to get eaten by one with sharpest teeth.");
-  print("  Can each of you show me your teeth? I'll be the judge.");
-  print("Dragon bows his heads down for a better look and the girl jumps on the neck.");
-  print("A spirit appears and gives Hera a magic sword.");
-  print("Sword obtained)");
-  add_item("Sword", inventory);
-  // INVENTORY UPDATE
-  print("Having picked up the sword, she threatens the dragon:");
-  print("* I won't kill you if you give me your crystal. Otherwise, I will cut off your heads.");
-  print("* No, don't kill us. We will give you our crystal.");
-  print("");
-  print("(CRYSTAL PIECE OBTAINED)");
-  // INVENTORY UPDATE
-  add_item("Yellow crystal", inventory);
-  // RANDOM CHOICE OF THE NEXT EVENT
-  remove_item("Sword", inventory);
-  // minigame_3();
+  // print("* Fine, I'll choose to be eaten. But how are you going to eat me at the same time since there are three of you?");
+  // print("  And I want a quick and painless death. That is why I pick to get eaten by one with sharpest teeth.");
+  // print("  Can each of you show me your teeth? I'll be the judge.");
+  // print("Dragon bows his heads down for a better look and the girl jumps on the neck.");
+  // print("A spirit appears and gives Hera a magic sword.");
+  // print("Sword obtained)");
+  // add_item("Sword", inventory);
+  // // INVENTORY UPDATE
+  // print("Having picked up the sword, she threatens the dragon:");
+  // print("* I won't kill you if you give me your crystal. Otherwise, I will cut off your heads.");
+  // print("* No, don't kill us. We will give you our crystal.");
+  // print("");
+  // print("(CRYSTAL PIECE OBTAINED)");
+  // // INVENTORY UPDATE
+  // add_item("Yellow crystal", inventory);
+  // // RANDOM CHOICE OF THE NEXT EVENT
+  // remove_item("Sword", inventory);
+  // // minigame_3();
 }
 
 void Monster_4 (string *inventory) {
   system("clear");
   print("The Snow Queen");
-  print("");
-  print("Seeing a girl in her queendom, The Snow Queen said:");
-  print("* Who are you, where are you from, and what do you need in here?");
-  print("The girl froze and answered truthfully:");
-  print("* I'm Hera and this is my dog Lucky, I'm from Snowland, my father died and I'm looking for a means to resurrect my father.");
-  print("* You are a kind girl, but you disturbed my peace. And for that, you will die slowly.");
-  print("  But there is one thing.");
-  print("  If you'll agree to become my successor, I'll forgive you and let you live.");
-  print("  You will stay here forever. What do you choose?");
-  print("");
+  // print("");
+  // print("Seeing a girl in her queendom, The Snow Queen said:");
+  // print("* Who are you, where are you from, and what do you need in here?");
+  // print("The girl froze and answered truthfully:");
+  // print("* I'm Hera and this is my dog Lucky, I'm from Snowland, my father died and I'm looking for a means to resurrect my father.");
+  // print("* You are a kind girl, but you disturbed my peace. And for that, you will die slowly.");
+  // print("  But there is one thing.");
+  // print("  If you'll agree to become my successor, I'll forgive you and let you live.");
+  // print("  You will stay here forever. What do you choose?");
+  // print("");
 
-  string message4_1 = "You died of a slow and painful death getting frostbitten.";
+  // string message4_1 = "You died of a slow and painful death getting frostbitten.";
   
-  Choice c4 = Choice(message4_1);
-  print("Choice (put in number 1 or 2):");
-  c4.choose_option();
-  print("1 - Die slowly");
-  print("2 - Become The Snow Queen's daughter");
-  if (c4.response == 2){
-    ;
-  }
-  else {
-    c4.call_end();
-  }
+  // Choice c4 = Choice(message4_1);
+  // print("Choice (put in number 1 or 2):");
+  // c4.choose_option();
+  // print("1 - Die slowly");
+  // print("2 - Become The Snow Queen's daughter");
+  // if (c4.response == 2){
+  //   ;
+  // }
+  // else {
+  //   c4.call_end();
+  // }
   
-  print("And then a spirit arose and said:");
-  print("* With this torch, you can turn the entire queendom of the Snow Queen into water.");
-  // INVENTORY UPDATE
-  add_item("Torch", inventory);
-  print("(Torch obtained)");
-  print("Hera took the torch in her hands. She was going to turn the entire kingdom, along with the queen, into water.");
-  print("The queen spoke:");
-  print("* Girl, you are kind. You won't kill me, I didn't do you any harm.");
-  print("  Perhaps you will leave me and my kingdom alone if I give you my magic crystal.");
-  print("  You are kind girl, and not evil.");
-  print("");
-  print("(CRYSTAL PIECE OBTAINED)");
-  // INVENTORY UPDATE
-  add_item("Green crystal", inventory);
-  print("");
-  remove_item("Torch", inventory);
+  // print("And then a spirit arose and said:");
+  // print("* With this torch, you can turn the entire queendom of the Snow Queen into water.");
+  // // INVENTORY UPDATE
+  // add_item("Torch", inventory);
+  // print("(Torch obtained)");
+  // print("Hera took the torch in her hands. She was going to turn the entire kingdom, along with the queen, into water.");
+  // print("The queen spoke:");
+  // print("* Girl, you are kind. You won't kill me, I didn't do you any harm.");
+  // print("  Perhaps you will leave me and my kingdom alone if I give you my magic crystal.");
+  // print("  You are kind girl, and not evil.");
+  // print("");
+  // print("(CRYSTAL PIECE OBTAINED)");
+  // // INVENTORY UPDATE
+  // add_item("Green crystal", inventory);
+  // print("");
+  // remove_item("Torch", inventory);
 }
+
 
 void Final_Battle(string *inventory) {
   system("clear");
