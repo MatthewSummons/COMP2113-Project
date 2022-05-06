@@ -22,31 +22,25 @@ std::string stages_alias[] = {
   "Final Battle"
 };
 
-// ! write func to update inventory (Add/ Remove)
 struct Choice {
-  // Choice Presented to the Player
-  string line;
   // End Screen line if incorrect choice made
-  string end_screen;
+  string end_screen_msg;
+  // Hold the choice of the player
+  int response
+
 
   // Constructor for Struct
-  Choice(std::string line, std::string end_screen = "You made the wrong choice") {
-    this -> line = line;
-    this -> end_screen = end_screen;
+  Choice(std::string end_screen_msg = "You made the wrong choice") {
+    this -> end_screen_msg = end_screen_msg;
   }
 
-  // The function which offers the choice to the player
-  void Decide(int delay = 35, bool isEndLine = true) {
-    print(this -> line, delay, isEndLine);
-    std::string response;
-    std::cin >> response;
-
-    if (response == "Y" || response == "y")
-      return;
-    
-    // Show End Screen for selecting the wrong choice
-    End_Screen(this -> end_screen);
-    
+  // Ask the player to choose an option form what is presented
+  void choose_option() {
+    cin >> (this -> response);
+  }
+  
+  void call_end() {
+    End_Screen(this -> end_screen_msg);
   }
 };
 
