@@ -43,7 +43,7 @@ void print(string str, int delay, bool isEndLine) {
     this_thread::sleep_for(chrono::milliseconds(delay));
   }
 
-  this_thread::sleep_for(chrono::milliseconds(delay + 100));
+  this_thread::sleep_for(chrono::milliseconds(delay + 300));
 
   if (isEndLine) {
     cout << endl;
@@ -393,7 +393,7 @@ void Monster_2 (string *inventory) {
 
   system("clear");
   print("* My choice is to become an animal.");
-  print("That doesn't seem to be a bad choice. But I am a bit afraid and uncertain of it.");
+  print("  That doesn't seem to be a bad choice. But I am a bit afraid and uncertain of it.");
   print("  I want to understand how you do it. As my last wish, show me first doing it on yourself.");
   print("* You are causing me trouble, child, but I'm still a merciful king. I will fulfil your last wish.");
   print("Koschei turns into a cat. Lucky grabs the cat and puts it in his mouth, and brings it to Hera. ");
