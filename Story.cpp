@@ -193,6 +193,7 @@ void Introduction(string *inventory) {
   {} |   | {}
      |___|
      |_|_|  )";
+  print("\n");
   print("She lived with her father, her step-mother and her sister in a small village called Snowland.");
   print("She also had a loyal husky friend named Lucky that her father has gifted to her.");
   system("clear");
@@ -218,6 +219,7 @@ void Introduction(string *inventory) {
    "`'`|"|`"|"|"`"`"
       /  )  /  )  
        --    --   )";
+  print("\n");
   print("Suddenly, out of the darkness emerged a creature that called itself the spirit of Frost who called himself Moroz.");
   print("The Spirit of Frost appears to all the dead.");
   print("He looked at the girl appearing to be in deep thoughts.");
@@ -291,6 +293,7 @@ void Monster_1 (string *inventory) {
         |    |      /      |
        _|____|_\ ~/       /X\
       /__\  /__\         //X\\ )";
+  print("\n");
   print("1 - Come into Baba Yaga's hut");
   print("2 - Don't come");
   print("Choice (put in number 1 or 2):");
@@ -328,7 +331,7 @@ void Monster_1 (string *inventory) {
       ___
   .-'`'  ''\
   `'-.___--' )";
-
+  print("\n");
   // INVENTORY UPDATE
   add_item("Blue crystal", inventory);
 
@@ -369,6 +372,7 @@ void Monster_2 (string *inventory) {
   /___||__||___\
      _||  ||_
     /__\  /__\  )";
+  print("\n");
   print("1 - Become a stone");
   print("2 - Become a zombie");
   print("3 - Become an animal");
@@ -401,6 +405,7 @@ void Monster_2 (string *inventory) {
       ___
   .-'`'  ''\
   `'-.___--' )";
+  print("\n");
   // INVENTORY UPDATE
   add_item("Red crystal", inventory);
   // RANDOM CHOICE OF THE NEXT EVENT
@@ -441,6 +446,7 @@ void Monster_3 (string *inventory) {
    ||      /    \)___)\
    | \____(      )___) )____
    \______(_______;;;)__;;;)  )";
+  print("\n");
   print("1 - Get burned");
   print("2 - Get trampled over");
   print("3 - Get eaten");
@@ -525,6 +531,7 @@ void Monster_4 (string *inventory) {
    /  /        \  \     
    (~/__________\~)       
       /__\  /__\   )";
+  print("\n");
   print("1 - Die slowly");
   print("2 - Become The Snow Queen's daughter");
   print("Choice (put in number 1 or 2):");
@@ -550,7 +557,6 @@ void Monster_4 (string *inventory) {
      |                         
      |                           
      | )";
-
   system("clear");
   print("Hera took the torch in her hands. She was going to turn the entire kingdom, along with the queen, into water.");
   print("The queen spoke:");
@@ -609,6 +615,7 @@ void Final_Battle(string *inventory) {
    "`'`|"|`"|"|"`"`"
       /  )  /  )  
        --    --   )";
+  print("\n");
   print("1 - Try to change the mind of the evil spirit");
   print("2 - Give up the crystals to the evil spirit");
   print("Choice (put in number 1 or 2):");
@@ -664,6 +671,7 @@ void Final_Battle(string *inventory) {
   | | ||  | |
   | | || / / 
    \ \||/ / )";
+  print("\n");
   print("Hera returns home with a magical flower. Putting the flower in her father's hand, she sees her father open his eyes.");
   print("");
   print("");
