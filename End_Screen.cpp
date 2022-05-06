@@ -9,6 +9,7 @@
 
 using namespace std;
 
+// Takes in a unique end_screen message and displays it below the Game Over Screen
 void End_Screen (string end_line) {
   // 25 tabs
   string End_Title = R"(
@@ -39,6 +40,6 @@ void End_Screen (string end_line) {
   cout << setw(86 - offset) << "";
   print(end_line, 100);
 
-  // Consider allowing player to continue from last save
+  // End The Game for choosing the wrong choice
   exit(0);
 }

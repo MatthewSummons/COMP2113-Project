@@ -7,7 +7,7 @@ struct Game_State
 {
   std::string stage;
   std::string *inventory = new std::string[inventory_length];
-  int order[4] = {};
+  unsigned order[4] = {};
 };
 
 std::string stages[] = {
@@ -30,7 +30,7 @@ void Start_Save_Load(const int game_mode, std::string &stage, std::string *inven
   if (game_mode == 1) {
     Crystal_Flower.stage = "Introduction";
 
-    for (int i = 0; i < inventory_length; i++) {
+    for (unsigned i = 0; i < inventory_length; i++) {
       Crystal_Flower.inventory[i] = "Empty";
     }
     
@@ -40,7 +40,7 @@ void Start_Save_Load(const int game_mode, std::string &stage, std::string *inven
     
     generate_seed(seed);
     // Copy seed to struct
-    for (int i = 0; i < 4; i++) {
+    for (unsigned i = 0; i < 4; i++) {
       Crystal_Flower.order[i] = seed[i];
     }
     
@@ -57,7 +57,7 @@ void Start_Save_Load(const int game_mode, std::string &stage, std::string *inven
   stage = Crystal_Flower.stage;
 
   // Copy inventory items to send to main()
-  for (int i = 0; i < inventory_length; i++) {
+  for (unsigned i = 0; i < inventory_length; i++) {
     inventory[i] = Crystal_Flower.inventory[i];
   }
 

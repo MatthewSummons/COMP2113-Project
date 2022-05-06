@@ -15,8 +15,7 @@ void playerMove1 ();
 void playerMove2 ();
 void playerMove3 ();
 
-struct enemies
-{
+struct enemies {
 	char symbol;
 	bool active;
 	int x;
@@ -66,8 +65,7 @@ char maze3[height][width] = {
 };
 
 // MINI GAME 1
-void minigame_1() 
-{   
+void minigame_1()  {   
 	while (action != 'Q' || 'q')
 	{	if (posx == 9 || posy == 9){
 	        cout << "\nYou have escaped the maze!" << endl;
@@ -117,8 +115,7 @@ void minigame_1()
 	return;
 }
 
-void playerMove1()
-{
+void playerMove1() {
 	cout << "\nYour move: ";
 	cin >> action;
 
@@ -200,8 +197,7 @@ void playerMove1()
 }
 
 // MINI GAME 2
-void minigame_2() 
-{
+void minigame_2()  {
 
 	while (action != 'Q' || 'q')
   {	if (posx == 9 || posy == 9){
@@ -260,8 +256,7 @@ void minigame_2()
 	return;
 }
 
-void playerMove2()
-{
+void playerMove2() {
 	cout << "\nYour move: ";
 	cin >> action;
 
@@ -342,8 +337,7 @@ void playerMove2()
 }
 
 // MINI GAME 3
-void minigame_3() 
-{
+void minigame_3()  {
 
 	while (action != 'Q' || 'q')
 	{	if (posx == 9 || posy == 9){
@@ -410,8 +404,7 @@ void minigame_3()
 	return;
 }
 
-void playerMove3()
-{
+void playerMove3() {
 	cout << "\nYour move: ";
 	cin >> action;
 

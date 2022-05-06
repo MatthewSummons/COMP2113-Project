@@ -30,19 +30,33 @@ Note that due to the structure of the plot the player is only offered to save th
 
 The game has been sectioned into multiple *.cpp & *.hpp files for organization purposes. One glance at the main.cpp file can attest to this fact. Some *.cpp files in fact don't even show up in the main file such as the minigames.cpp file which is a dependency for the story.cpp file instead.
 
-6. Proper indentation and naming styles
+Features:
 
-We used 2-space tabs and used snake_case in our code where appropriate and ensured our best to maintain consitency in the code style for the game. The naming conventions and other stylistic decsisions can be called personal to an extent but are consitent througout the program.
+- Interactive Gameplay:
+  Decide your fate as you make hard choices while adventuring through Snowland
+- Unique Minigames:
+  Play through three different minigames as battle against the various threats of Snowland!
+- Engaging Plot
+- Rolling text:
+  Enjoy the story as the lines are printed character by character allowing you to read it as you go along!
+- Unique Death Messages:
+  See unique death messages at the game over screen, possibly also hinting towards which option should've been chosen instead
+- Cheat Proof:
+  Don't Cheat! We'll know!
+  
+  A smart save/load feature that detects hampering with the save file & wipes the state clean to discourage cheating!
+  
+  To top it off, the save file is put aside in a hidden directory with a .save extension to make it harder for the avergae user to acces it!
 
-7. In-code documentation
 
-The code is reasonably well documented, with "doc-strings" above functions explaining what their inputs & outputs are (if any) and describe what the accomplish after running.
+Miscellaneous Details:
 
-
+Testing & development for the game were done in the Academy11 server of the CS department
 
 No non-standard libraries as such were used to make this text-based adventure game.
 
 Quick Start Guide:
+
 Open a terminal and move to the directory with the game's code. Then run the commands
 
 make GAME
