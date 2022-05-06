@@ -346,7 +346,7 @@ void Monster_1 (string *inventory) {
   add_item("Blue crystal", inventory);
 
   // RANDOM CHOICE OF THE NEXT EVENT
-
+  system("clear");
   minigame_1();
 }
 
@@ -423,7 +423,7 @@ void Monster_2 (string *inventory) {
   // INVENTORY UPDATE
   add_item("Red crystal", inventory);
   // RANDOM CHOICE OF THE NEXT EVENT
-
+  system("clear");
   minigame_2();
 }
 
@@ -509,6 +509,7 @@ void Monster_3 (string *inventory) {
   add_item("Yellow crystal", inventory);
   // RANDOM CHOICE OF THE NEXT EVENT
   remove_item("Sword", inventory);
+  system("clear");
   minigame_3();
 }
 
@@ -600,6 +601,7 @@ void Monster_4 (string *inventory) {
   add_item("Green crystal", inventory);
   print("");
   remove_item("Torch", inventory);
+  system("clear");
   minigame_2();
 }
 
