@@ -193,8 +193,7 @@ void Introduction(string *inventory) {
    //|   |\\
   {} |   | {}
      |___|
-     || ||                                                                                                                                                                                       
-     // \\ 
+     |_|_|
      
   
   )");
@@ -261,18 +260,11 @@ void Introduction(string *inventory) {
   else {
     c1.call_end();
   }
-
-  // minigame_1();
-
-  // R"()" for raw strings.
-  // print()
 }
 
 
 void Monster_1 (string *inventory) {
   system("clear");
-  
-  //remove_item("Stick", inventory);
   
   print("Hut of the Baba Yaga");
   print("");
