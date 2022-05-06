@@ -1,6 +1,18 @@
 # COMP2113-Project
 *A text-based game created in C/C++ created by Shaheer Ziya &amp; Botagoz Issayeva (Group 169)*
 
+## Quick Start Guide:
+
+Open a terminal and move to the directory with the game's code. Then run the commands
+
+```
+make GAME 
+
+./GAME
+```
+
+And enjoy playing the game!
+
 // Description of Game & Introduction of Game Rules
 
 
@@ -57,6 +69,8 @@ The game has been sectioned into multiple *.cpp & *.hpp files for organization p
   A smart save/load feature that detects hampering with the save file & wipes the state clean to discourage cheating!
   
   To top it off, the save file is put aside in a hidden directory with a .save extension to make it harder for the avergae user to acces it!
+  
+  Go ahead, try it! Wipe the entire save file clean & see what happense when you run the game again!
 
 
 ## Miscellaneous Details:
@@ -64,15 +78,3 @@ The game has been sectioned into multiple *.cpp & *.hpp files for organization p
 *Testing & development for the game were done in the Academy11 server of the CS department*
 
 *No non-standard libraries as such were used to make this text-based adventure game.*
-
-## Quick Start Guide:
-
-Open a terminal and move to the directory with the game's code. Then run the commands
-
-```
-make GAME 
-
-./GAME
-```
-
-And enjoy playing the game!
