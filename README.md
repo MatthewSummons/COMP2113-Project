@@ -69,8 +69,10 @@ The game has been sectioned into multiple *.cpp & *.hpp files for organization p
 
 Open a terminal and move to the directory with the game's code. Then run the commands
 
-**make GAME**
+```
+make GAME 
 
-**./GAME**
+./GAME
+```
 
 And enjoy playing the game!
