@@ -44,25 +44,25 @@ The game has been sectioned into multiple *.cpp & *.hpp files for organization p
 
 ## Features:
 
-**- Interactive Gameplay:**
+### **Interactive Gameplay:**
   
   Decide your fate as you make hard choices while adventuring through Snowland
 
-**- Unique Minigames:**
+### **Unique Minigames:**
   
   Play through three different minigames as battle against the various threats of Snowland!
 
-**- Engaging Plot**
+### **Engaging Plot**
 
-**- Rolling text:**
+### **Rolling text:**
   
   Enjoy the story as the lines are printed character by character allowing you to read it as you go along!
 
-**- Unique Death Messages:**
+### **Unique Death Messages:**
   
   See unique death messages at the game over screen, possibly also hinting towards which option should've been chosen instead
 
-**- Cheat Proof:**
+### **Cheat Proof:**
   
   Don't Cheat! We'll know!
   
