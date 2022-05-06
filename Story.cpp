@@ -26,8 +26,7 @@ struct Choice {
   // End Screen line if incorrect choice made
   string end_screen_msg;
   // Hold the choice of the player
-  int response
-
+  int response;
 
   // Constructor for Struct
   Choice(std::string end_screen_msg = "You made the wrong choice") {
@@ -166,10 +165,10 @@ void Introduction(string *inventory) {
 
   print("Introduction");
 
-  add_item("Stick", inventory);
+  // add_item("Stick", inventory);
 
-  print("");
-  print("Once upon a time, there was a little girl. Her name was Hera.");
+  // print("");
+  // print("Once upon a time, there was a little girl. Her name was Hera.");
   // print("She lived with her father, her step-mother and her sister in a small village called Snowland.");
   // print("She also had a loyal husky friend named Lucky that her father has gifted to her.");
   // print("One day, the girl's father died of an unknown illness.");
@@ -206,6 +205,25 @@ void Introduction(string *inventory) {
     // print("  Useless girl, since you foolishly declined my generous offer, I will kill you.");
     // print("");
     // GAME OVER
+  
+  // Choice c1 = Choice("You were killed by the fox!");
+  // print("OP 1");
+  // print("OP 2");
+  // print("OP 3");
+
+  // print("Chose from the option above (put in number)");
+  // c1.choose_option();
+
+  // if (c1.response == 1) {
+  //   ;
+  // }
+
+  // else {
+  //   c1.call_end();
+  // }
+
+
+
 
   // R"()" for raw strings.
   // print()
@@ -333,7 +351,7 @@ void Monster_3 (string *inventory) {
   print("- Get burned");
   print("- Get trampled over");
   print("- Get eaten");
-
+  
   // CHOICE 4
   // If pick "- Get burned":
     print("Hera gets burned by the dragon in an instant.");
