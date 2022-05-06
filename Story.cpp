@@ -54,9 +54,9 @@ void print(string str, int delay, bool isEndLine) {
 void add_item(string item, string *inventory) {
   int filled_slots = 0;
   string *current = inventory;
+  print("New item in your inventory:\n");
   // Find an empty slot in the inventory, if no empty slots break out
   while (*current != "Empty") {
-    print("New item in your inventory:\n");
     print(*current);
     print("\n");
     filled_slots++;
