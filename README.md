@@ -3,7 +3,7 @@
 
 ## Quick Start Guide:
 
-Open a terminal and move to the directory with the game's code. Then run the commands
+Open a terminal and move to the directory with the game's code. Then run the commands type out:
 
 ```
 make GAME 
@@ -15,6 +15,8 @@ And enjoy playing the game!
 
 // Description of Game & Introduction of Game Rules
 
+Description:
+
 The story of a girl who was ready to go through the most possibly dangerous challenges to revive her beloved father back to life. On her way, she met dangerous monsters and showed her courage and ingenuity, using them as a tool to defeat them. 
 
 Immerse yourself in the game and unravel the mystery of the crystal flower. Does it exist? Are the stories about it true? Also, are the gifts of the flower worth risking your life? You will learn all this soon in the game... 
@@ -22,6 +24,17 @@ Immerse yourself in the game and unravel the mystery of the crystal flower. Does
 Here, you are the master of your destiny. 
 
 = So which path will you choose? =
+
+Rules:
+
+* Picking a choice is crucial in this game; they let you discover the further development of different story branches or lead to a bad ending(s). Use your best judgement. 
+
+* As a part of the game, a player will be asked to escape the maze mini-game and find clues, which will lead to an important revelation.
+
+* Controls in this game are intuitive and do not require the usage of the computer mouse. Simply type!
+
+* Inputs of the user are not case sensitive. Either use uppercase or lowercase characters.
+
 
 ## Project Requirement:
 
