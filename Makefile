@@ -20,6 +20,7 @@ main.o: main.cpp Title_Screen.hpp Save_Load.hpp Story.hpp Minigames.hpp End_Scre
 
 GAME: main.o Title_Screen.o Save_Load.o Story.o Minigames.o End_Screen.o
 			g++ $(FLAGS)  $^ -o $@
+			make clean
 
 clean:
 			rm -f *.o
