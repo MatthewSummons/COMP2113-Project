@@ -15,6 +15,13 @@ And enjoy playing the game!
 
 // Description of Game & Introduction of Game Rules
 
+The story of a girl who was ready to go through the most possibly dangerous challenges to revive her beloved father back to life. On her way, she met dangerous monsters and showed her courage and ingenuity, using them as a tool to defeat them. 
+
+Immerse yourself in the game and unravel the mystery of the crystal flower. Does it exist? Are the stories about it true? Also, are the gifts of the flower worth risking your life? You will learn all this soon in the game... 
+
+Here, you are the master of your destiny. 
+
+= So which path will you choose? =
 
 ## Project Requirement:
 
