@@ -56,7 +56,7 @@ void add_item(string item, string *inventory) {
   string *current = inventory;
   // Find an empty slot in the inventory, if no empty slots break out
   while (*current != "Empty") {
-    print("Inventory:\n");
+    print("New item in your inventory:\n");
     print(*current);
     print("\n");
     filled_slots++;
@@ -313,10 +313,11 @@ void Monster_1 (string *inventory) {
     c2.call_end();
   }
 
-  
+  system("clear");
   print("* Would it be really okay? I don't want to inconvenience the person I first met.");
   print("* You are asking? Come here and can call me grandma.");
   print("* Thank you, grandma.");
+  system("clear");
   print("When the girl approached Baba Yaga, pointed to the dusty stove next to her:");
   print("* For your hunger, there's a baked potato in the oven. Take it.");
   print("When the girl was about to reach to the stove, Hera understood Baba Yaga's true intention.");
@@ -325,13 +326,14 @@ void Monster_1 (string *inventory) {
   print("In an urgent situation, the girl started thinking of the way to get out and decided to go for the trick:");
   print("* I can't reach the cauldron with potatoes. You have long arms, grandma, help me get it.");
   print("  Then Baba Yaga decided to look into the stove.");
+  system("clear");
   print("  At that moment, the girl pushed Baba Yaga into the stove with a kindled fire and closed the lid of the stove.");
   print("  Baba Yaga began to scream for help. Then the girl said:");
   print("* I'll help you if you give me your precious crystal.");
   print("  I don't think that it is more precious than your life. Think quick.");
   print("Baba Yaga had no choice but to agree to give her crystal.");
   print("");
-  print("(CRYSTAL PIECE OBTAINED)");
+  print("CRYSTAL PIECE OBTAINED");
   print(R"(
       ___
   .-'`'  ''\
@@ -401,7 +403,7 @@ void Monster_2 (string *inventory) {
     c3.call_end();
   }
 
-  
+  system("clear");
   print("* My choice is to become an animal.");
   print("That doesn't seem to be a bad choice. But I am a bit afraid and uncertain of it.");
   print("  I want to understand how you do it. As my last wish, show me first doing it on yourself.");
@@ -410,7 +412,7 @@ void Monster_2 (string *inventory) {
   print("Koschei pleaded:");
   print("* Do not let your dog eat me. I will give you my most precious possession: a mana crystal.");
   print("");
-  print("(CRYSTAL PIECE OBTAINED)");
+  print("CRYSTAL PIECE OBTAINED");
   print(R"(
       ___
   .-'`'  ''\
@@ -484,7 +486,7 @@ void Monster_3 (string *inventory) {
   print("  Can each of you show me your teeth? I'll be the judge.");
   print("Dragon bows his heads down for a better look and the girl jumps on the neck.");
   print("A spirit appears and gives Hera a magic sword.");
-  print("Sword obtained)");
+  print("(Sword obtained)");
   print(R"(
         /| ________________
   O|===|* >________________>
@@ -495,7 +497,7 @@ void Monster_3 (string *inventory) {
   print("* I won't kill you if you give me your crystal. Otherwise, I will cut off your heads.");
   print("* No, don't kill us. We will give you our crystal.");
   print("");
-  print("(CRYSTAL PIECE OBTAINED)");
+  print("CRYSTAL PIECE OBTAINED");
   print(R"(
       ___
   .-'`'  ''\
@@ -519,6 +521,7 @@ void Monster_4 (string *inventory) {
   print("The girl froze and answered truthfully:");
   print("* I'm Hera and this is my dog Lucky, I'm from Snowland, my father died and I'm looking for a means to resurrect my father.");
   print("* You are a kind girl, but you disturbed my peace. And for that, you will die slowly.");
+  system("clear");
   print("  But there is one thing.");
   print("  If you'll agree to become my successor, I'll forgive you and let you live.");
   print("  You will stay here forever. What do you choose?");
@@ -577,13 +580,15 @@ void Monster_4 (string *inventory) {
      
      
   )");
+
+  system("clear");
   print("Hera took the torch in her hands. She was going to turn the entire kingdom, along with the queen, into water.");
   print("The queen spoke:");
   print("* Girl, you are kind. You won't kill me, I didn't do you any harm.");
   print("  Perhaps you will leave me and my kingdom alone if I give you my magic crystal.");
   print("  You are kind girl, and not evil.");
   print("");
-  print("(CRYSTAL PIECE OBTAINED)");
+  print("CRYSTAL PIECE OBTAINED");
   print(R"(
       ___
   .-'`'  ''\
@@ -648,6 +653,7 @@ void Final_Battle(string *inventory) {
     ;
   }
   else {
+    system("clear");
     print("Hera gave her crystals to the spirit.");
     print("The spirit kills the girl once obtaining what he wanted.");
     print("With the power of the crystal flower, he became the most powerful being on earth.");
@@ -655,6 +661,7 @@ void Final_Battle(string *inventory) {
     c6.call_end();
   }
 
+  system("clear");
   print("* You deceived me, evil spirit. And I will not give you my crystals, which I have obtained.");
   print("* Then I will kill you and take them from you.");
   print("* Don't kill me and don't take my crystals from me. You are kind, helped me all the way through, and saved me from death.");
