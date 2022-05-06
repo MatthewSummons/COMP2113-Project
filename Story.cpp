@@ -56,7 +56,9 @@ void add_item(string item, string *inventory) {
   string *current = inventory;
   // Find an empty slot in the inventory, if no empty slots break out
   while (*current != "Empty") {
+    print("Inventory:\n");
     print(*current);
+    print("\n");
     filled_slots++;
     // inventory size = 8
     if (filled_slots > 8)
@@ -192,7 +194,10 @@ void Introduction(string *inventory) {
   {} |   | {}
      |___|
      || ||                                                                                                                                                                                       
-     // \\ )");
+     // \\ 
+     
+  
+  )");
   print("She lived with her father, her step-mother and her sister in a small village called Snowland.");
   print("She also had a loyal husky friend named Lucky that her father has gifted to her.");
   system("clear");
@@ -203,7 +208,7 @@ void Introduction(string *inventory) {
   print(R"(
          ..--..
        /        \
-       |  _\ _.  |
+      |   _\ _.  |
        \/ o/_ o \/
         \/  - \ /
     .--./ `--` \.--.
@@ -217,7 +222,10 @@ void Introduction(string *inventory) {
    /      |        \
    "`'`|"|`"|"|"`"`"
       /  )  /  )  
-       --    --   )");
+       --    --   
+       
+       
+  )");
   print("Suddenly, out of the darkness emerged a creature that called itself the spirit of Frost who called himself Moroz.");
   print("The Spirit of Frost appears to all the dead.");
   print("He looked at the girl appearing to be in deep thoughts.");
@@ -232,7 +240,7 @@ void Introduction(string *inventory) {
   system("clear");
   print("  You need magic crystals that will revive your father.");
   print("  Crystals are held by evil Baba Yaga, Koshchei the Immortal, Zmey Gorynych and the Snow Queen.");
-  print("  If you manage to collect these crystals, you can make a magic flower by combing them. ");
+  print("  If you manage to collect these crystals, you can make a magic flower by combining them. ");
   print("  This flower is very unusual, as it contains the magical power of all its current owners.");
   print("  The one who takes a possession of this flower can translate all their conceivable and inconceivable desires into reality.");
   print("  This will be more than enough to revive your father.");
@@ -297,7 +305,10 @@ void Monster_1 (string *inventory) {
        \|    |       /     |
         |    |      /      |
        _|____|_\ ~/       /X\
-      /__\  /__\         //X\\ )");
+      /__\  /__\         //X\\ 
+      
+      
+  )");
   print("1 - Come into Baba Yaga's hut");
   print("2 - Don't come");
   print("Choice (put in number 1 or 2):");
@@ -328,11 +339,14 @@ void Monster_1 (string *inventory) {
   print("  I don't think that it is more precious than your life. Think quick.");
   print("Baba Yaga had no choice but to agree to give her crystal.");
   print("");
-  print("(FIRST CRYSTAL PIECE OBTAINED)");
+  print("(CRYSTAL PIECE OBTAINED)");
   print(R"(
       ___
   .-'`'  ''\
-  `'-.___--' )");
+  `'-.___--' 
+  
+
+  )");
 
   // INVENTORY UPDATE
   add_item("Blue crystal", inventory);
@@ -373,7 +387,10 @@ void Monster_2 (string *inventory) {
     / |----| \
   /___||__||___\
      _||  ||_
-    /__\  /__\ )");
+    /__\  /__\ 
+    
+    
+  )");
   print("1 - Become a stone");
   print("2 - Become a zombie");
   print("3 - Become an animal");
@@ -405,7 +422,10 @@ void Monster_2 (string *inventory) {
   print(R"(
       ___
   .-'`'  ''\
-  `'-.___--' )");
+  `'-.___--' 
+  
+  
+  )");
   // INVENTORY UPDATE
   add_item("Red crystal", inventory);
   // RANDOM CHOICE OF THE NEXT EVENT
@@ -445,7 +465,10 @@ void Monster_3 (string *inventory) {
   <  >      |(,,) )__)    |
    ||      /    \)___)\
    | \____(      )___) )____
-   \______(_______;;;)__;;;)  )");
+   \______(_______;;;)__;;;)  
+   
+   
+  )");
   print("1 - Get burned");
   print("2 - Get trampled over");
   print("3 - Get eaten");
@@ -484,7 +507,10 @@ void Monster_3 (string *inventory) {
   print(R"(
       ___
   .-'`'  ''\
-  `'-.___--' )");
+  `'-.___--' 
+  
+  
+  )");
   // INVENTORY UPDATE
   add_item("Yellow crystal", inventory);
   // RANDOM CHOICE OF THE NEXT EVENT
@@ -527,7 +553,10 @@ void Monster_4 (string *inventory) {
   \    /      \    /     
    /  /        \  \     
    (~/__________\~)       
-      /__\  /__\   )");
+      /__\  /__\   
+      
+      
+  )");
   print("1 - Die slowly");
   print("2 - Become The Snow Queen's daughter");
   print("Choice (put in number 1 or 2):");
@@ -552,7 +581,10 @@ void Monster_4 (string *inventory) {
     '|'                          
      |                         
      |                           
-     | )");
+     | 
+     
+     
+  )");
   print("Hera took the torch in her hands. She was going to turn the entire kingdom, along with the queen, into water.");
   print("The queen spoke:");
   print("* Girl, you are kind. You won't kill me, I didn't do you any harm.");
@@ -563,11 +595,15 @@ void Monster_4 (string *inventory) {
   print(R"(
       ___
   .-'`'  ''\
-  `'-.___--' )");
+  `'-.___--' 
+  
+  
+  )");
   // INVENTORY UPDATE
   add_item("Green crystal", inventory);
   print("");
   remove_item("Torch", inventory);
+  minigame_2();
 }
 
 
@@ -593,7 +629,7 @@ void Final_Battle(string *inventory) {
   print(R"(
          ..--..
        /        \
-       |  _\ _.  |
+      |   _\ _.  |
        \/ o/_ o \/
         \/  - \ /
     .--./ `--` \.--.
@@ -607,7 +643,10 @@ void Final_Battle(string *inventory) {
    /      |        \
    "`'`|"|`"|"|"`"`"
       /  )  /  )  
-       --    --   )");
+       --    --   
+       
+       
+  )");
   print("1 - Try to change the mind of the evil spirit");
   print("2 - Give up the crystals to the evil spirit");
   print("Choice (put in number 1 or 2):");
@@ -644,7 +683,10 @@ void Final_Battle(string *inventory) {
   print(R"(
       ___
   .-'`'  ''\
-  `'-.___--' )");
+  `'-.___--' 
+  
+  
+  )");
   // INVENTORY UPDATE
   add_item("White crystal", inventory);
   print(R"(
@@ -660,7 +702,10 @@ void Final_Battle(string *inventory) {
   |\  ||  |\
   | | ||  | |
   | | || / / 
-   \ \||/ /  )");
+   \ \||/ / 
+   
+
+  )");
   print("Hera returns home with a magical flower. Putting the flower in her father's hand, she sees her father open his eyes.");
   print("");
   print("");
