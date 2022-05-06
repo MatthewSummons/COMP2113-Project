@@ -58,7 +58,6 @@ void add_item(string item, string *inventory) {
   // Find an empty slot in the inventory, if no empty slots break out
   while (*current != "Empty") {
     print(*current);
-    print("\n");
     filled_slots++;
     // inventory size = 8
     if (filled_slots > 8)
@@ -184,7 +183,7 @@ void Introduction(string *inventory) {
 
   print("");
   print("Once upon a time, there was a little girl. Her name was Hera.");
-  print(R"(
+  cout << R"(
       ___
      //`\\
     (/0 0\)
@@ -195,8 +194,7 @@ void Introduction(string *inventory) {
      |___|
      |_|_|
      
-  
-  )");
+  )";
   print("She lived with her father, her step-mother and her sister in a small village called Snowland.");
   print("She also had a loyal husky friend named Lucky that her father has gifted to her.");
   system("clear");
@@ -204,7 +202,7 @@ void Introduction(string *inventory) {
   print("He was the most important person for her and she loved him with all her heart.");
   print("The girl mourned day and night for her father.");
   system("clear");
-  print(R"(
+  cout << R"(
          ..--..
        /        \
       |   _\ _.  |
@@ -222,9 +220,8 @@ void Introduction(string *inventory) {
    "`'`|"|`"|"|"`"`"
       /  )  /  )  
        --    --   
-       
-       
-  )");
+          
+  )";
   print("Suddenly, out of the darkness emerged a creature that called itself the spirit of Frost who called himself Moroz.");
   print("The Spirit of Frost appears to all the dead.");
   print("He looked at the girl appearing to be in deep thoughts.");
@@ -282,7 +279,7 @@ void Monster_1 (string *inventory) {
   string message2_1 = "Baba Yaga puts you behind THE bars to later eat.";
   
   Choice c2 = Choice(message2_1);
-  print(R"(
+  cout << R"(
        /~~~~~~\
       (        )
      ( ~~~~~~~~ )
@@ -298,9 +295,8 @@ void Monster_1 (string *inventory) {
         |    |      /      |
        _|____|_\ ~/       /X\
       /__\  /__\         //X\\ 
-      
-      
-  )");
+        
+  )";
   print("1 - Come into Baba Yaga's hut");
   print("2 - Don't come");
   print("Choice (put in number 1 or 2):");
@@ -334,13 +330,12 @@ void Monster_1 (string *inventory) {
   print("Baba Yaga had no choice but to agree to give her crystal.");
   print("");
   print("CRYSTAL PIECE OBTAINED");
-  print(R"(
+  cout << R"(
       ___
   .-'`'  ''\
   `'-.___--' 
   
-
-  )");
+  )";
 
   // INVENTORY UPDATE
   add_item("Blue crystal", inventory);
@@ -367,7 +362,7 @@ void Monster_2 (string *inventory) {
   string message3_1 = "You chose a path of misery.";
   
   Choice c3 = Choice(message3_1);
-  print(R"(
+  cout << R"(
       /\/\/\
      /______\
      \ ^  ^ /
@@ -382,9 +377,8 @@ void Monster_2 (string *inventory) {
   /___||__||___\
      _||  ||_
     /__\  /__\ 
-    
-    
-  )");
+      
+  )";
   print("1 - Become a stone");
   print("2 - Become a zombie");
   print("3 - Become an animal");
@@ -413,13 +407,12 @@ void Monster_2 (string *inventory) {
   print("* Do not let your dog eat me. I will give you my most precious possession: a mana crystal.");
   print("");
   print("CRYSTAL PIECE OBTAINED");
-  print(R"(
+  cout << R"(
       ___
   .-'`'  ''\
-  `'-.___--' 
+  `'-.___--'
   
-  
-  )");
+  )";
   // INVENTORY UPDATE
   add_item("Red crystal", inventory);
   // RANDOM CHOICE OF THE NEXT EVENT
@@ -446,7 +439,7 @@ void Monster_3 (string *inventory) {
   string message4_1 = "You were killed by the dragon!";
   
   Choice c4 = Choice(message4_1);
-  print(R"(
+  cout << R"(
        _)                       (_
      _) \ /\%/\  /\_/\  /\_/\ / (_
     _)  \\(0 0)  (0 0)  (0 0)//  (_
@@ -461,8 +454,7 @@ void Monster_3 (string *inventory) {
    | \____(      )___) )____
    \______(_______;;;)__;;;)  
    
-   
-  )");
+  )";
   print("1 - Get burned");
   print("2 - Get trampled over");
   print("3 - Get eaten");
@@ -487,10 +479,12 @@ void Monster_3 (string *inventory) {
   print("Dragon bows his heads down for a better look and the girl jumps on the neck.");
   print("A spirit appears and gives Hera a magic sword.");
   print("(Sword obtained)");
-  print(R"(
+  cout << R"(
         /| ________________
   O|===|* >________________>
-        \| )");
+        \| )
+            
+  ";
   add_item("Sword", inventory);
   // INVENTORY UPDATE
   print("Having picked up the sword, she threatens the dragon:");
@@ -498,13 +492,12 @@ void Monster_3 (string *inventory) {
   print("* No, don't kill us. We will give you our crystal.");
   print("");
   print("CRYSTAL PIECE OBTAINED");
-  print(R"(
+  cout << R"(
       ___
   .-'`'  ''\
   `'-.___--' 
   
-  
-  )");
+  )";
   // INVENTORY UPDATE
   add_item("Yellow crystal", inventory);
   // RANDOM CHOICE OF THE NEXT EVENT
@@ -531,7 +524,7 @@ void Monster_4 (string *inventory) {
   string message5_1 = "You died of a slow and painful death getting frostbitten.";
   
   Choice c5 = Choice(message5_1);
-  print(R"(
+  cout << R"(
         o O o                                 
        o \|/ o                      
     o o o O o o o    
@@ -552,7 +545,7 @@ void Monster_4 (string *inventory) {
       /__\  /__\   
       
       
-  )");
+  )";
   print("1 - Die slowly");
   print("2 - Become The Snow Queen's daughter");
   print("Choice (put in number 1 or 2):");
@@ -570,7 +563,7 @@ void Monster_4 (string *inventory) {
   // INVENTORY UPDATE
   add_item("Torch", inventory);
   print("(Torch obtained)");
-  print(R"(
+  cout << R"(
    . . .                         
     \|/                          
   `--+--'                        
@@ -580,7 +573,7 @@ void Monster_4 (string *inventory) {
      | 
      
      
-  )");
+  )";
 
   system("clear");
   print("Hera took the torch in her hands. She was going to turn the entire kingdom, along with the queen, into water.");
@@ -590,13 +583,13 @@ void Monster_4 (string *inventory) {
   print("  You are kind girl, and not evil.");
   print("");
   print("CRYSTAL PIECE OBTAINED");
-  print(R"(
+  cout << R"(
       ___
   .-'`'  ''\
   `'-.___--' 
   
   
-  )");
+  )";
   // INVENTORY UPDATE
   add_item("Green crystal", inventory);
   print("");
@@ -625,7 +618,7 @@ void Final_Battle(string *inventory) {
   string message6_1 = "You brought misery to the people of Snowland.";
   
   Choice c6 = Choice(message6_1);
-  print(R"(
+  cout << R"(
          ..--..
        /        \
       |   _\ _.  |
@@ -645,7 +638,7 @@ void Final_Battle(string *inventory) {
        --    --   
        
        
-  )");
+  )";
   print("1 - Try to change the mind of the evil spirit");
   print("2 - Give up the crystals to the evil spirit");
   print("Choice (put in number 1 or 2):");
@@ -681,16 +674,16 @@ void Final_Battle(string *inventory) {
   print("* Then I'll help you revive your father. But you won't need the stones anymore, and I'm leaving them for myself.");
   print("  I decided to abandon my goals to enslave the world and will help people.");
   print("(CRYSTAL PIECE OBTAINED)");
-  print(R"(
+  cout << R"(
       ___
   .-'`'  ''\
   `'-.___--' 
   
   
-  )");
+  )";
   // INVENTORY UPDATE
   add_item("White crystal", inventory);
-  print(R"(
+  cout << R"(
       ,           
     /\^/`\         
    | \/   |       
@@ -706,7 +699,7 @@ void Final_Battle(string *inventory) {
    \ \||/ / 
    
 
-  )");
+  )";
   print("Hera returns home with a magical flower. Putting the flower in her father's hand, she sees her father open his eyes.");
   print("");
   print("");
