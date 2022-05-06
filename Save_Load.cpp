@@ -21,6 +21,8 @@ std::string stages [] = {
   "Final Battle"
 };
 
+// File responsible for handling the saving/loading from save files.
+// Takes in the game_mode, stage & inventory and updates it accordingly
 void Start_Save_Load(const int game_mode, std::string &stage, std::string* inventory) {
 
   Game_State Crystal_Flower;
