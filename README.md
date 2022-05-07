@@ -13,9 +13,8 @@ make GAME
 
 And enjoy playing the game!
 
-// Description of Game & Introduction of Game Rules
 
-Description:
+## Description:
 
 The story of a young girl who was ready to go through the most possibly dangerous challenges to revive her beloved father back to life. On her way, she met dangerous monsters and showed her courage and ingenuity, using them as a tool to defeat them. 
 
@@ -23,9 +22,9 @@ Immerse yourself in the game and unravel the mystery of the crystal flower. Does
 
 Here, you are the master of your destiny. 
 
-= So which path will you choose? =
+_= So which path will you choose? =_
 
-Rules:
+## Rules:
 
 * Picking a choice is crucial in this game; they let you discover the further development of different story branches or lead to a bad ending(s). Use your best judgement. 
 
