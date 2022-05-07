@@ -9,7 +9,7 @@
 
 using namespace std;
 
-#define CENTRE 78
+#define CENTRE 110
 #define TERMINAL_HEIGHT 15
 
 #include "Title_Screen.hpp"

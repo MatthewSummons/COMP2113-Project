@@ -4,7 +4,7 @@
 
 #include "Story.hpp"    // For print()
 
-#define CENTRE 78
+#define CENTRE 110
 #define TERMINAL_HEIGHT 15
 
 using namespace std;
@@ -37,8 +37,8 @@ void End_Screen (string end_line) {
 
   // Print the end line centred under the End Screen
   int offset = end_line.length() / 2;
-  cout << setw(86 - offset) << "";
-  print(end_line, 100);
+  cout << setw(CENTRE - offset) << "";
+  print(end_line, 90);
 
   // End The Game for choosing the wrong choice
   exit(0);
